@@ -1,0 +1,9 @@
+.vagrant/
+vendor/
+data/cache/*
+data/logs/*
+data/auth/*
+!data/cache/.gitkeep
+public/captcha/*
+phpunit.xml
+config/autoload/zz.delete.me.local.php

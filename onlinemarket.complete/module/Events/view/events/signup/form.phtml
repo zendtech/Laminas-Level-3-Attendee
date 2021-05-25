@@ -1,0 +1,89 @@
+<?php use Events\Entity\Registration; ?>
+<div class="col-lg-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Event Signup</h2>
+        </div>
+        <div class="panel-body">
+    <form class="form-horizontal" action="/events/signup/<?= $event->getId() ?>" method="POST">
+    <input type="hidden" name="registration[event_id]" value="<?= $event->getId() ?>" />
+    <input type="hidden" name="registration[registration_time]" value="<?= date(Registration::DATE_FORMAT) ?>" />
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Event Signup</legend>
+
+        Please fill out all items as appropriate.
+
+        <div class="control-group">
+            <label class="control-label">Event</label>
+            <div class="controls">
+                <span class=""><?= $event->getName() ?></span>
+            </div>
+        </div>
+
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label">First Name</label>
+            <div class="controls">
+                <input id="first_name" name="registration[first_name]" placeholder="First Name" required="" class="input-xlarge" type="text">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label">Last Name</label>
+            <div class="controls">
+                <input id="last_name" name="registration[last_name]" placeholder="Last Name" required="" class="input-xlarge" type="text">
+
+            </div>
+        </div>
+
+        <div id="ticket-list" data-ticket-count="1">
+
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <button type="button" id="add-ticket" name="add-ticket" class="btn btn-primary">Add Another Ticket</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">Name On Ticket #1</label>
+                <div class="controls">
+                    <input id="ticket_1" name="ticket[1]" placeholder="Name On Ticket" required="" class="input-xlarge" type="text">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+            <label class="control-label"></label>
+            <div class="controls">
+                <button id="" name="" class="btn btn-success">Sign Up!</button>
+            </div>
+        </div>
+
+
+    </fieldset>
+    </form>
+    </div>
+</div>
+
+<script>
+    $('#add-ticket').click(function() {
+        ticketList = $('#ticket-list');
+        numTickets = ticketList.data('ticket-count');
+        nextTicketIndex = numTickets + 1;
+        ticketList.append(
+            '<div class="control-group">'
+            + '<label class="control-label">Name On Ticket #' + nextTicketIndex + '</label>'
+            + '<div class="controls"><input id="ticket_' + nextTicketIndex + '" name="ticket[' + nextTicketIndex + ']"'
+            + 'placeholder="Name On Ticket" required="" class="input-xlarge" type="text"></div></div>'
+        );
+        ticketList.data('ticket-count', nextTicketIndex);
+    });
+</script>

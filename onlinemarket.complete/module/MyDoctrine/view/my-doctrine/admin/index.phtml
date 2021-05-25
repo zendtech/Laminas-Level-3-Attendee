@@ -1,0 +1,16 @@
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Events Admin</h3>
+        </div>
+        <div class="panel-body">
+            <?php if ($events) : ?>
+                <?php foreach ($events as $event) : ?>
+                    <a href="/doctrine/admin/<?= $event->getId() ?>"><?= $event->getName() ?></a><br />
+                <?php endforeach; ?>
+            <?php else : ?>
+                No Events!
+            <?php endif; ?>
+        </div>
+    </div>
+</div>

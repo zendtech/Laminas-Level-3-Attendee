@@ -1,0 +1,10 @@
+<?php echo $this->partial('partials/item', ['item' => $this->item]); ?>
+<?php if ($this->messages) : ?>
+	<?php if (is_array($this->messages)) : ?>
+		<ul>
+		<?php foreach ($this->messages as $item) echo '<li>' . $item . '</li>' . PHP_EOL; ?>
+		</ul>
+	<?php else : ?>
+		<?= $this->messages; ?>
+	<?php endif; ?>
+<?php endif; ?>

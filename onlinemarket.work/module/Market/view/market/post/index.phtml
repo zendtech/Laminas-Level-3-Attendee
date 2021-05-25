@@ -1,0 +1,114 @@
+<style>
+label {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+</style>
+
+<?php //echo $this->headScript()->setFile('http://code.jquery.com/jquery-1.9.1.js', 'text/javascript'); ?>
+<?php //echo $this->headScript()->setFile('/js/jquery-ui.js', 'text/javascript'); ?>
+
+
+<!-- start of actual content -->
+
+<!-- //*** TRANSLATION LAB: translate title -->
+<h1><?= 'Online Market Posting' ?></h1>
+<hr />
+
+<?php if ($this->flashMessenger()->hasMessages()) : ?>
+    <h3 style="color:red;">Messages</h3>
+    <?=  $this->htmlList($this->flashMessenger()->getMessages()); ?>
+    <h3 style="color:red;">Invalid Fields</h3>
+    <ul>
+    <?php foreach ($this->postForm->getInputFilter()->getInvalidInput() as $input) : ?>
+        <li>
+            <?= $input->getName() . ':' ?>
+            <?php foreach ($input->getValidatorChain()->getValidators() as $chain) : ?>
+            <?php foreach ($chain as $validator) : ?>
+                <?php if ($validator && is_object($validator)) : ?>
+                <?php $error = $validator->getMessages(); ?>
+                    <?= implode(',', $error); ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <?php endforeach; ?>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <?=  '<hr />'  ?>
+<?php endif; ?>
+
+<style>
+    dt {
+        text-align:left;
+    }
+</style>
+<?php $post = $this->postForm; ?>
+<?php $post->prepare(); ?>
+<?php echo $this->form()->openTag($post); ?>
+<table width="100%">
+<tr>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('category')); ?></dt>
+<dd><?= $this->formSelect($post->get('category')); ?><?= $this->formElementErrors($post->get('category')); ?></dd>
+</td>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('title')); ?></dt>
+<dd><?= $this->formText($post->get('title')); ?><?= $this->formElementErrors($post->get('title')); ?></dd>
+</td>
+</tr>
+<tr>
+<!-- //*** FILE UPLOAD LAB: convert to the view helper for file uploads -->
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('photo_filename')); ?></dt>
+<dd><?= $this->formFile($post->get('photo_filename')); ?><?= $this->formElementErrors($post->get('photo_filename')); ?></dd>
+</td>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('price')); ?></dt>
+<dd><?= $this->formText($post->get('price')); ?><?= $this->formElementErrors($post->get('price')); ?></dd>
+</td>
+</tr>
+<tr>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('cityCode')); ?></dt>
+<dd><?= $this->formText($post->get('cityCode')); ?><?= $this->formElementErrors($post->get('cityCode')); ?></dd>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('contact_name')); ?></dt>
+<dd><?= $this->formText($post->get('contact_name')); ?><?= $this->formElementErrors($post->get('contact_name')); ?></dd>
+</td>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('contact_phone')); ?></dt>
+<dd><?= $this->formText($post->get('contact_phone')); ?><?= $this->formElementErrors($post->get('contact_phone')); ?></dd>
+</td>
+</tr>
+<tr>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('contact_email')); ?></dt>
+<dd><?= $this->formEmail($post->get('contact_email')); ?><?= $this->formElementErrors($post->get('contact_email')); ?></dd>
+</td>
+<td width="50%" style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('delete_code')); ?></dt>
+<dd><?= $this->formText($post->get('delete_code')); ?><?= $this->formElementErrors($post->get('delete_code')); ?></dd>
+</td>
+</tr>
+<tr>
+<td colspan=2 style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('expires')); ?></dt>
+<dd><?= $this->formRadio($post->get('expires')); ?><?= $this->formElementErrors($post->get('expires')); ?></dd>
+</td>
+</tr>
+<tr>
+<td colspan=2 style="vertical-align:top;">
+<dt><?= $this->formLabel($post->get('description')); ?></dt>
+<dd><?= $this->formTextarea($post->get('description')); ?><?= $this->formElementErrors($post->get('description')); ?></dd>
+</td>
+</tr>
+</table>
+<dt><?= $this->formLabel($post->get('captcha')); ?></dt>
+<dd><?= $this->formCaptcha($post->get('captcha')); ?><?= $this->formElementErrors($post->get('captcha')); ?></dd>
+<p style="color:white;"><?= $this->formSubmit($post->get('submit')); ?></p>
+<?php echo $this->form()->closeTag(); ?>

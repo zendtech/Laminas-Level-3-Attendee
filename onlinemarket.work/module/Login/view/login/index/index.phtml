@@ -1,0 +1,54 @@
+<?php $this->cycle()->assign(['#F8FDAE','#D9FDAE']); ?>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default" style="height:500px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Login</h3>
+            </div>
+            <div class="panel-body">
+                <?php $this->loginForm->setAttributes(['action' => $this->url('login', ['action' => 'login'])]); ?>
+                <?php $this->loginForm->prepare(); ?>
+                <?= $this->form()->openTag($this->loginForm); ?>
+                <dt><?= $this->formLabel($this->loginForm->get('email')); ?></dt>
+                <dd><?= $this->formEmail($this->loginForm->get('email')); ?><?= $this->formElementErrors($this->loginForm->get('email')); ?></dd>
+                <dt><?= $this->formLabel($this->loginForm->get('password')); ?></dt>
+                <dd><?= $this->formPassword($this->loginForm->get('password')); ?><?= $this->formElementErrors($this->loginForm->get('password')); ?></dd>
+                <!-- //*** I18N LAB: make sure localeLink gets set when Login\Event\LoginEvent::EVENT_LOGIN_VIEW is triggered -->
+                <?php if (isset($this->localeLink)) : ?>
+                    <dt><?= $this->formLabel($this->loginForm->get('locale')); ?></dt>
+                    <dd><?= $this->formSelect($this->loginForm->get('locale')); ?><?= $this->formElementErrors($this->loginForm->get('locale')); ?></dd>
+                <?php endif; ?>
+                <p>
+                <span class="btn btn-success"><?= $this->formSubmit($this->loginForm->get('submit')); ?></span>
+                <!-- //*** OAUTH2 LAB: make sure googleLink gets set when Login\Event\LoginEvent::EVENT_LOGIN_VIEW is triggered -->
+                <?php if (isset($this->googleLink)) : ?>
+                    <span class="btn btn-success"><a href="<?= $this->url('auth-oauth', ['action' => 'google']); ?>">Google</a></span>
+                <?php endif; ?>
+                </p>
+                <?= $this->form()->closeTag(); ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default" style="height:500px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Test Users</h3>
+            </div>
+            <div class="panel-body">
+            <table width="80%">
+            <tr style="background-color:#B4ECB4"><th width="50%">Login</th><th width="20%">Role</th><th width="30%">Provider</th></tr>
+            <tr style="background-color:<?= $this->cycle()->next(); ?>"><td>admin@zend.com</td><td>admin</td><td>default</td></tr>
+            <tr style="background-color:<?= $this->cycle()->next(); ?>"><td>daryl@zend.com</td><td>user</td><td>default</td></tr>
+            <tr style="background-color:<?= $this->cycle()->next(); ?>"><td>doug@zend.com</td><td>user</td><td>default</td></tr>
+            <tr style="background-color:<?= $this->cycle()->next(); ?>"><td>google@zend.com</td><td>user</td><td>google</td></tr>
+            </table>
+            <br>
+            NOTE: all passwords are <i>password</i>
+        </div>
+    </div>
+
+    <div style="text-align: center">
+        <?php echo $this->message; ?>
+    </div>
+</div>

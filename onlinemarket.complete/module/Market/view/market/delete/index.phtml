@@ -1,0 +1,42 @@
+<div class="col-lg-8">
+<style>
+th {
+	text-align: right;
+}
+</style>
+<h2><?php echo $this->translate('Delete Listing?') ?></h2>
+<p>
+<?php
+$form = $this->deleteForm;
+$form->prepare();
+$form->setAttribute('method', 'POST');
+echo $this->form()->openTag($form);
+?>
+<table width="60%">
+<?php echo $this->elementToRow($form->get('delCode')); ?>
+<tr>
+	<td colspan=2>&nbsp;</td>
+	<td>
+		<?php $captcha = $form->get('captcha'); ?>
+		<?php echo $this->formElement($captcha); ?>
+		<?php $captchaErrors = $this->formElementErrors($captcha); ?>
+		<span class="form-errors">
+		<?php echo $captchaErrors; ?>
+		</span>
+	</td>
+</tr>
+<tr>
+	<td colspan=2>&nbsp;</td>
+	<td>
+	<?php echo $this->formSubmit($form->get('submit')); ?>
+	<?php echo $this->formSubmit($form->get('cancel')); ?>
+	<?php echo $this->formHidden($form->get('id')); // doesn't work?>
+	</td>
+</tr>
+</table>
+<?php echo $this->form()->closeTag(); ?>
+</p>
+<p>
+<?php echo $this->partial('market/partials/item', array('item' => $item))?>
+</p>
+</div>

@@ -1,0 +1,22 @@
+version: "3"
+services:
+  laminas-3:
+    container_name: laminas_3
+    hostname: laminas
+    image: laminas_3
+    volumes:
+     - ".:/home"
+    ports:
+     - "8888:80"
+    build: docker
+    restart: always
+    command: lfphp --mysql --phpfpm --apache
+    networks:
+      app_net:
+        ipv4_address: 10.30.30.30
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.30.30.0/24"

@@ -1,0 +1,83 @@
+{
+    "name": "zendframework/skeleton-application",
+    "description": "Online Market App for ZF3",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "mvc",
+        "zf"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "zendframework/zend-component-installer": "^1.0 || ^0.3 || ^1.0.0-dev@dev",
+        "zendframework/zend-mvc": "^3.0.1",
+        "zfcampus/zf-development-mode": "^3.0",
+        "zendframework/zend-db": "*",
+        "zendframework/zend-form": "*",
+        "zendframework/zend-i18n": "*",
+        "zendframework/zend-session": "*",
+        "zendframework/zend-captcha": "*",
+        "phpunit/phpunit": "*",
+        "zendframework/zend-test": "*",
+        "zendframework/zend-mail": "*",
+        "zendframework/zend-view": "*",
+        "zendframework/zend-crypt": "^3.2",
+        "zendframework/zend-mvc-plugin-flashmessenger": "^1.0",
+        "zendframework/zend-json": "^3.0",
+        "zendframework/zend-cache": "^2.7",
+        "zendframework/zend-permissions-acl": "^2.6",
+        "zendframework/zend-navigation": "^2.8",
+        "zendframework/zend-log": "^2.9",
+        "firephp/firephp-core": "^0.4.0",
+        "zendframework/zend-authentication": "^2.6",
+		"doctrine/orm" : "^2.6",
+		"doctrine/doctrine-orm-module" : "*",
+        "ocramius/proxy-manager": "^2.2",
+        "league/oauth2-google": "^3.0",
+        "zendframework/zend-debug": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/",
+            "Market\\": "module/Market/src/",
+            "Model\\": "module/Model/src/",
+            "Events\\": "module/Events/src/",
+            "SecurePost\\": "module/SecurePost/src/",
+            "Login\\": "module/Login/src/",
+            "Registration\\": "module/Registration/src/",
+            "RestApi\\" : "module/RestApi/src/",
+            "Cache\\" : "module/Cache/src/",
+            "AccessControl\\" : "module/AccessControl/src/",
+            "PhpSession\\" : "module/PhpSession/src/",
+            "Notification\\" : "module/Notification/src/",
+            "Logging\\": "module/Logging/src/",
+            "MyDoctrine\\" : "module/MyDoctrine/src/",
+            "Encryption\\": "module/Encryption/src/",
+            "PrivateMessages\\": "module/PrivateMessages/src/",
+            "AuthOauth\\": "module/AuthOauth/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/",
+            "MarketTest\\": "module/Market/test/"
+        }
+    },
+    "extra": [],
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable"
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php",
+        "test": "phpunit"
+    }
+}

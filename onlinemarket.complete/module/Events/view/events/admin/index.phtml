@@ -1,0 +1,19 @@
+<div class="col-lg-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Events</h2>
+        </div>
+        <div class="panel-body">
+        <?php if ($this->events) : ?>
+            <ul>
+            <?php foreach ($this->events as $event) : ?>
+            <li><a href="<?= $this->url('events/admin', ['eventId' => $event->getId()]); ?>"><?= $event->getName() ?></a></li>
+            <?php endforeach; ?>
+            </ul>
+        <?php else : ?>
+        No Events Found
+        <?php endif; ?>
+        <hr />
+        </div>
+    </div>
+</div>

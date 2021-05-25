@@ -1,0 +1,8 @@
+.vagrant/
+vendor/
+config/development.config.php
+data/cache/*
+data/uploads/*
+data/logs/*
+!data/cache/.gitkeep
+phpunit.xml

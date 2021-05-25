@@ -1,0 +1,95 @@
+<?php $user = (!empty($this->authService)) ? $this->authService->getIdentity() : ''; ?>
+<?= $this->doctype() ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('ZF3 Online Market')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/style.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+        ?>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?= $this->url('home') ?>">
+                        <img src="<?= $this->basePath('img/zf-logo-mark.svg') ?>" height="28" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>&nbsp;Online Market
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <!-- //*** NAVIGATION LAB: use the "navigation()" view helper instead of hard-coding menu items -->
+                    <!-- set role and acl to navigation -->
+                    <?php
+                        $user = NULL;
+                        if ($this->authService) {
+                            $user = $this->authService->getIdentity();
+                        }
+                        if (isset($this->acl)) {
+                            $this->navigation('default')->setAcl($this->acl);
+                            $role = ($user) ? $user->getRole() : 'guest';
+                            $this->navigation('default')->setRole($role);
+                        }
+                    ?>
+                    <?= $this->navigation('default')->menu()->setUlClass('nav navbar-nav'); ?>
+                    <!-- //*** SECURITY:AUTHENTICATION LAB: if auth service has an identity, display it, otherwise "guest" -->
+                    <span style="float:right;color:white;">
+                        <?= $this->translate('Logged in as'); ?>: <?= ($user) ? $user->getUsername() : 'guest'; ?>&nbsp;[<?= \Locale::getDefault(); ?>]
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Categories</h3>
+                        </div>
+                        <div class="panel-body">
+                            <?= $this->navigation()->menu('market-categories-menu')->setUlClass('no_bullets'); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <?= $this->content ?>
+                        </div>
+                        <hr>
+                        <footer>
+                            <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. <?= $this->translate('All rights reserved'); ?>.</p>
+                        </footer>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <?= $this->inlineScript() ?>
+
+    </body>
+</html>

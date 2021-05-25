@@ -1,0 +1,43 @@
+{% extends '@layout/default.html.twig' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Online Market List</h2>
+            <hr>
+            Place a checkmark next to any title to delete.
+            <form action="/delete" method="post">
+            <table width="80%">
+                <tr>
+                    <td>
+                        <ul>
+                        {% for entry in listings|slice(0, 9) %}
+                            <li>
+                                <input type=checkbox name="del[{{ entry.listings_id }}]" value="{{ entry.listings_id }}" />  {{ entry.title }}
+                                <input type=hidden name="title[{{ entry.listings_id }}]" value="{{ entry.title }}" />
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                        {% for entry in listings|slice(10, 19) %}
+                            <li>
+                                <input type=checkbox name="del[{{ entry.listings_id }}]" value="{{ entry.listings_id }}" />  {{ entry.title }}
+                                <input type=hidden name="title[{{ entry.listings_id }}]" value="{{ entry.title }}" />
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                <tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Process" />
+                        <a href="{{ url }}/{{ prev }}">PREV</a> | <a href="{{ url }}/{{ next }}">NEXT</a>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+{% endblock %}

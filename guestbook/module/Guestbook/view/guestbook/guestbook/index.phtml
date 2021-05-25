@@ -1,0 +1,38 @@
+<?php
+echo $this->headScript()->appendFile('/js/jquery.dataTables.min.js');
+echo $this->headLink()->appendStylesheet('/css/jquery.dataTables.min.css');
+?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <?= $this->translatePlural('Person', 'People', $this->val); ?>
+                    <?= $this->translate('in'); ?>
+                    <?= $this->translate('the Guestbook'); ?>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <table width="100%" id="guestbook-table">
+                <thead>
+                <tr>
+                    <th width="15%"><?= $this->translate('Name'); ?></th>
+                    <th width="10%"><?= $this->translate('Avatar'); ?></th>
+                    <th width="20%"><?= $this->translate('Email'); ?></th>
+                    <th width="25%"><?= $this->translate('Date Signed'); ?></th>
+                    <th width="30%"><?= $this->translate('Message'); ?></th>
+                </tr>
+                </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $('#guestbook-table').DataTable( {
+        "ajax": "/guestbook/ajax"
+    } );
+} );
+</script>

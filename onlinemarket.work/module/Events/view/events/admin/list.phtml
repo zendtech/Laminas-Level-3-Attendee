@@ -1,0 +1,29 @@
+<div class="col-lg-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Registration Information</h2>
+        </div>
+        <div class="panel-body">
+        <?php $count = 0; ?>
+        <table class="table table-striped">
+            <tr><th>First</th><th>Last</th><th>Reg Date</th><th>Attendees</th></tr>
+            <?php foreach ($registrations as $reg): ?>
+            <tr>
+                <td><?= $reg->registration_time ?></td>
+                <td><?= $reg->first_name ?></td>
+                <td><?= $reg->last_name ?></td>
+                <td>
+                    <ul>
+                    <?php foreach ($reg->attendees as $attendee) : ?>
+                    <li><?= $attendee->name_on_ticket ?></li>
+                    <?php endforeach; ?>
+                    </ul>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+            <tr><td colspan=2>&nbsp;</td><th>Total Registrations</th><td><?= count($registrations) ?></td></tr>
+        </table>
+        <hr />
+        </div>
+    </div>
+</div>

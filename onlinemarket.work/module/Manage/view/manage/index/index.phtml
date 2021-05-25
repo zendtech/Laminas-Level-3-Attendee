@@ -1,0 +1,48 @@
+<?php //*** you can use the browser developer tools to verify the correct JSON received ?>
+<?php
+echo $this->headScript()->appendFile('//code.jquery.com/jquery-1.12.4.js')
+                   ->appendFile('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js');
+echo $this->headLink()->appendStylesheet('https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css');
+?>
+<script>
+$(document).ready(function() {
+    $('#users').DataTable({
+        "ajax": '/manage/lookup'
+     });
+} );
+</script>
+
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Restricted Area</h2>
+        </div>
+        <div class="panel-body">
+            <p><b style="color:red;">Access to this area is on a <i>need-to-know-basis</i> only!</b></p>
+            <p>If you are reading this sentence, and do not need to know,
+            Daryl will personally hunt you down and make you say "PHP" 1000 times fast.
+            If you fail to pass this test you will taken before the <i>PHP Elephant</i>
+            and held to account!!!</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Online Market Users</h2>
+        </div>
+        <div class="panel-body">
+            <table id="users" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+            <th>Email</th>
+            <th>Provider</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>

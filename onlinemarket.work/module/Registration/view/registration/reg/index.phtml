@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default" style="height:500px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Register</h3>
+            </div>
+            <div class="panel-body">
+                <?php $this->regForm->setAttributes(['action' => $this->url('registration')]); ?>
+                <?php $this->regForm->prepare(); ?>
+                <?= $this->form()->openTag($this->regForm); ?>
+                <dt><?= $this->formLabel($this->regForm->get('email')); ?></dt>
+                <dd><?= $this->formEmail($this->regForm->get('email')); ?><?= $this->formElementErrors($this->regForm->get('email')); ?></dd>
+                <dt><?= $this->formLabel($this->regForm->get('password')); ?></dt>
+                <dd><?= $this->formPassword($this->regForm->get('password')); ?><?= $this->formElementErrors($this->regForm->get('password')); ?></dd>
+                <dt><?= $this->formLabel($this->regForm->get('username')); ?></dt>
+                <dd><?= $this->formText($this->regForm->get('username')); ?><?= $this->formElementErrors($this->regForm->get('username')); ?></dd>
+                <dt><?= $this->formLabel($this->regForm->get('securityQuestion')); ?></dt>
+                <dd><?= $this->formText($this->regForm->get('securityQuestion')); ?><?= $this->formElementErrors($this->regForm->get('securityQuestion')); ?></dd>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default" style="height:500px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">&nbsp;</h3>
+            </div>
+            <div class="panel-body">
+                <dt><?= $this->formLabel($this->regForm->get('securityAnswer')); ?></dt>
+                <dd><?= $this->formText($this->regForm->get('securityAnswer')); ?><?= $this->formElementErrors($this->regForm->get('securityAnswer')); ?></dd>
+                <!-- //*** TRANSLATION LAB: set $useLocale = TRUE -->
+                <?php if ($this->useLocale) : ?>
+                    <dt><?= $this->formLabel($this->regForm->get('locale')); ?></dt>
+                    <dd><?= $this->formSelect($this->regForm->get('locale')); ?><?= $this->formElementErrors($this->regForm->get('locale')); ?></dd>
+                <?php else : ?>
+                    <input type="hidden" name="locale" value="en" />
+                <?php endif; ?>
+                <dt><?= $this->formLabel($this->regForm->get('role')); ?></dt>
+                <dd><?= $this->formRadio($this->regForm->get('role')); ?><?= $this->formElementErrors($this->regForm->get('role')); ?></dd>
+                <dt><?= $this->formLabel($this->regForm->get('provider')); ?></dt>
+                <dd><?= $this->formSelect($this->regForm->get('provider')); ?><?= $this->formElementErrors($this->regForm->get('provider')); ?></dd>
+                <br>
+                <p><span class="btn btn-success"><?= $this->formSubmit($this->regForm->get('submit')); ?></span></p>
+                <?= $this->form()->closeTag(); ?>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <?php echo $this->message; ?>
+        <h3 style="color:red;">Invalid Fields</h3>
+        <ul>
+        <?php foreach ($this->regForm->getInputFilter()->getInvalidInput() as $input) : ?>
+            <li>
+                <?= $input->getName() . ':' ?>
+                <?php foreach ($input->getValidatorChain()->getValidators() as $chain) : ?>
+                <?php foreach ($chain as $validator) : ?>
+                    <?php if ($validator && is_object($validator)) : ?>
+                    <?php $error = $validator->getMessages(); ?>
+                        <?= implode(',', $error); ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php endforeach; ?>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

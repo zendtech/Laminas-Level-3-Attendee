@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Registration Information</h2>
+        </div>
+        <div class="panel-body">
+        <?php $count = 0; ?>
+        <table class="table table-striped">
+            <tr><th>First</th><th>Last</th><th>Reg Date</th><th>Attendees</th></tr>
+            <?php $regId = 0; ?>
+            <?php $count = 0; ?>
+            <?php foreach ($event->getRegistrations() as $reg): ?>
+                <tr>
+                <?php if ($regId !== $reg->getId()) : ?>
+                    <?php $regId = $reg->getId() ?>
+                    <td><?= $reg->getFirstName() ?></td>
+                    <td><?= $reg->getLastName() ?></td>
+                    <td><?= $reg->getRegistrationTime() ?></td>
+                <?php else : ?>
+                    <td colspan=3>&nbsp;</td>
+                <?php endif; ?>
+                    <td><ul><?php foreach ($reg->getAttendees() as $attendee) echo '<li>' . $attendee->getName() . '</li>'; ?></ul></td>
+                </tr>
+                <?php $count += count($reg->getAttendees()); ?>
+            <?php endforeach; ?>
+            <tr><td colspan=2>&nbsp;</td><th>Total</th><td><?= $count ?></td></tr>
+        </table>
+        <hr />
+        </div>
+    </div>
+</div>

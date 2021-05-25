@@ -1,0 +1,71 @@
+<?php
+    $locale = \Locale::getDefault();
+    switch ($locale) {
+        case 'en' :
+            $code = 'USD';
+            break;
+        case 'es' :
+        case 'de' :
+        case 'fr' :
+            $code = 'EUR';
+            break;
+        default :
+            $code = 'GBP';
+    }
+?>
+<div class="span7">
+    <style>
+    th {
+        text-align: right;
+    }
+    .listingImage {
+        float: left;
+        width: 40%;
+        height: 800px;
+    }
+    .listingNotes {
+        float: left;
+        width: 60%;
+    }
+    .tableSpace {
+        width: 100px;
+    }
+    </style>
+    <p>
+        <?php if ($this->item) : ?>
+        <h3><i><?php echo $this->escapeHtml($this->item->title); ?></i></h3>
+        <table width="60%" cellspacing="5px" cellpadding="5px">
+            <tr>
+                <!-- //*** I18N LAB: use I18n formatters to show locale-aware price -->
+                <td><h4><?php echo $this->currencyFormat($this->item->price, $code, TRUE); ?></h4></td>
+                <td><h4><?php echo $this->escapeHtml($this->item->city); ?></h4></td>
+                <td><h4><?php echo $this->escapeHtml($this->item->country); ?></h4></td>
+            </tr>
+        </table>
+        <hr />
+        <div class="listingImage">
+            <?php $photoFilename = $this->escapeHtml($this->item->photo_filename); ?>
+            <?php if (stripos($photoFilename, 'http:') === FALSE) $photoFilename = $this->basePath() . $photoFilename; ?>
+            <img src="<?php echo  $photoFilename; ?>" width="200px"/>
+            </div>
+            <div class="listingNotes">
+            <table cellspacing="10px" cellpadding="10px" class="tableClass">
+                <!-- //*** TRANSLATION LAB: translate all headings -->
+                <tr><th><?= $this->translate('Category') ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->category); ?></td></tr>
+                <!-- AGGREGATE HYDRATOR LAB: refactor these two lines: date_created and date_expires will now be returned by the hydrator as DateTime instances already -->
+                <tr><th><?= $this->translate('Posted') ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->dateFormat(new DateTime($this->item->date_created), \IntlDateFormatter::LONG,\IntlDateFormatter::NONE)); ?></td></tr>
+                <tr><th><?= $this->translate('Expires') ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->dateFormat(new DateTime($this->item->date_expires), \IntlDateFormatter::LONG,\IntlDateFormatter::NONE)); ?></td></tr>
+                <tr><th><?= $this->translate('Name') ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->contact_name); ?></td></tr>
+                <tr><th><?= $this->translate('Phone') ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->contact_phone); ?></td></tr>
+                <tr><th><?= $this->translate('Email') ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->contact_email); ?></td></tr>
+            </table>
+        </div>
+        <hr>
+        <p><?php echo $this->escapeHtml($this->item->description); ?></p>
+        <hr />
+        <?php else : ?>
+            <!-- //*** TRANSLATION LAB: free text translation -->
+            <?= $this->translate('Unable to find listing!'); ?>
+        <?php endif; ?>
+    </p>
+</div>

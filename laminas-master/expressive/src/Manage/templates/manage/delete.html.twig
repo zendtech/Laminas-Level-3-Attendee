@@ -1,0 +1,17 @@
+{% extends '@layout/default.html.twig' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Online Market Deletion(s)</h2>
+            <hr>
+            List of successful deletions:
+            <ul>
+            {% for entry in listings %}
+                <li>{{ entry.title }}</li>
+            {% endfor %}
+            </ul>
+            <br>Expected: {{ expected }}
+            <br>Actual:   {{ actual }}
+        </div>
+    </div>
+{% endblock %}
