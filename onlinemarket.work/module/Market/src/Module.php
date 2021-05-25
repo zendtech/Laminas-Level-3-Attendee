@@ -2,8 +2,8 @@
 namespace Market;
 
 use Market\Event\LogEvent;
-use Zend\Mvc\MvcEvent;
-use Zend\Navigation\Service\ConstructedNavigationFactory;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Navigation\Service\ConstructedNavigationFactory;
 use Market\Controller\ListingsTableAwareInterface;
 
 class Module

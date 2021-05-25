@@ -4,7 +4,7 @@ namespace Manage\Handler;
 
 use Manage\Domain\ListingsService;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
+use Mezzio\Template\TemplateRendererInterface;
 
 class ListHandlerFactory
 {

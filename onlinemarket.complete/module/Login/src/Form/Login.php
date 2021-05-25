@@ -1,11 +1,11 @@
 <?php
 namespace Login\Form;
 
-use Zend\Filter;
-use Zend\Validator;
-use Zend\Form\ {Form, Element};
-use Zend\InputFilter\ {InputFilter, Input};
-use Zend\Hydrator\ClassMethods;
+use Laminas\Filter;
+use Laminas\Validator;
+use Laminas\Form\ {Form, Element};
+use Laminas\InputFilter\ {InputFilter, Input};
+use Laminas\Hydrator\ClassMethods;
 class Login extends Form
 {
     public function addElements()

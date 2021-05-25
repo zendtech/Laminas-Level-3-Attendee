@@ -8,10 +8,10 @@ use Translation\Listener\TranslationListenerAggregate;
 use Login\Form\Login as LoginForm;
 use Interop\Container\ContainerInterface;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Cache\StorageFactory;
-use Zend\Cache\Storage\Adapter\Filesystem;
-use Zend\I18n\View\Helper\Translate;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Cache\StorageFactory;
+use Laminas\Cache\Storage\Adapter\Filesystem;
+use Laminas\I18n\View\Helper\Translate;
 
 class Module
 {

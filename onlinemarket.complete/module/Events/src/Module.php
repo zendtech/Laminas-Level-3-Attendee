@@ -2,15 +2,15 @@
 namespace Events;
 
 use Events\Entity\ {Event, Registration, Attendee};
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\ {EventManager, SharedEventManager};
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\Db\Adapter\Adapter;
-use Zend\Filter;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\ {EventManager, SharedEventManager};
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Filter;
 //*** DELEGATING HYDRATOR LAB: add the correct "use" statements
-use Zend\Hydrator\ {HydratorPluginManager, DelegatingHydrator, ClassMethods, ObjectProperty};
+use Laminas\Hydrator\ {HydratorPluginManager, DelegatingHydrator, ClassMethods, ObjectProperty};
 //*** NAVIGATION LAB: add "use" statement for the ConstructedNavigationFactory
-use Zend\Navigation\Service\ConstructedNavigationFactory;
+use Laminas\Navigation\Service\ConstructedNavigationFactory;
 
 class Module
 {
@@ -76,7 +76,7 @@ class Module
                 'events-service-container' => function ($container) {
                     return $container;
                 },
-                //*** DELEGATING HYDRATOR LAB: define a service which returns an instance of Zend\Hydrator\DelegatingHydrator
+                //*** DELEGATING HYDRATOR LAB: define a service which returns an instance of Laminas\Hydrator\DelegatingHydrator
                 'events-delegating-hydrator' => function ($container) {
                     //*** DELEGATING HYDRATOR LAB: assign a "ObjectProperty" hydrator to the "Registration" entity and "ClassMethods" to the others
                     $hydroClass = new ClassMethods();

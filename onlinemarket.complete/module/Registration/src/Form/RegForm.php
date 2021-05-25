@@ -1,10 +1,10 @@
 <?php
 namespace Registration\Form;
 
-use Zend\Hydrator\ClassMethods;
-use Zend\InputFilter\InputFilter;
-use Zend\Form\ {Form, Element};
-use Zend\Hydrator\ObjectProperty;
+use Laminas\Hydrator\ClassMethods;
+use Laminas\InputFilter\InputFilter;
+use Laminas\Form\ {Form, Element};
+use Laminas\Hydrator\ObjectProperty;
 
 class RegForm extends Form
 {

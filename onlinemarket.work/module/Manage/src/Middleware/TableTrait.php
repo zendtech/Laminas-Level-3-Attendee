@@ -1,7 +1,7 @@
 <?php
 namespace Manage\Middleware;
 
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\TableGateway\TableGateway;
 trait TableTrait
 {
     protected $table;

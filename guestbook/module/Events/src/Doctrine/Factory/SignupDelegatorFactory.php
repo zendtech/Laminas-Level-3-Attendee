@@ -3,7 +3,7 @@ namespace Events\Doctrine\Factory;
 
 use Exception;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\DelegatorFactoryInterface;
+use Laminas\ServiceManager\Factory\DelegatorFactoryInterface;
 
 class SignupDelegatorFactory implements DelegatorFactoryInterface
 {

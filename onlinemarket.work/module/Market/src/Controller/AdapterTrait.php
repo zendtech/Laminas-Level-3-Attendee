@@ -1,7 +1,7 @@
 <?php
 namespace Market\Controller;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 trait AdapterTrait
 {

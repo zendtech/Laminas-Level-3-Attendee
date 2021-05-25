@@ -1,14 +1,14 @@
 <?php
 namespace Market\Form;
 
-use Zend\InputFilter\ {InputFilter,Input, FileInput};
-use Zend\Filter\ {Digits, StripTags, StringTrim, StringToLower, StringToUpper, Callback};
-use Zend\Validator\ {InArray, StringLength, Regex, Callback as CallValid};
-use Zend\I18n\Validator\ {Alnum, ToFloat};
+use Laminas\InputFilter\ {InputFilter,Input, FileInput};
+use Laminas\Filter\ {Digits, StripTags, StringTrim, StringToLower, StringToUpper, Callback};
+use Laminas\Validator\ {InArray, StringLength, Regex, Callback as CallValid};
+use Laminas\I18n\Validator\ {Alnum, ToFloat};
 
 //*** FILE UPLOAD LAB: add appropriate "use" statements
-use Zend\Filter\File\RenameUpload;
-use Zend\Validator\File\ {FilesSize, IsImage, ImageSize};
+use Laminas\Filter\File\RenameUpload;
+use Laminas\Validator\File\ {FilesSize, IsImage, ImageSize};
 
 class PostFilter extends InputFilter
 {

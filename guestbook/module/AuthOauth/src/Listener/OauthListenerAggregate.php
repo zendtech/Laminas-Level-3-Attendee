@@ -5,8 +5,8 @@ use Exception;
 use AuthOauth\Generic\ {AuthServiceTrait, Constants};
 use Application\Traits\ServiceManagerTrait;
 use Login\Model\UsersTable;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 
 class OauthListenerAggregate implements ListenerAggregateInterface
 {

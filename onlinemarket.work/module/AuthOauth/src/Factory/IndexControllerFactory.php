@@ -3,11 +3,11 @@ namespace AuthOauth\Factory;
 
 use AuthOauth\Adapter\GoogleAdapter;
 use AuthOauth\Controller\IndexController;
-use Zend\Authentication\AuthenticationService;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {

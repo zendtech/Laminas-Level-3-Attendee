@@ -1,7 +1,7 @@
 <?php
 namespace AccessControl\Acl;
 
-use Zend\Permissions\Acl\Acl;
+use Laminas\Permissions\Acl\Acl;
 class GuestbookAcl extends Acl
 {
     const DEFAULT_ROLE = 'guest';

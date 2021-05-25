@@ -42,10 +42,10 @@ First, use [Composer](https://getcomposer.org) to install all dependencies:
 $ composer install
 ```
 
-Make sure that `zendframework/zend-test` is installed:
+Make sure that `laminas/laminas-test` is installed:
 
 ```bash
-$ composer require --dev zendframework/zend-test
+$ composer require --dev laminas/laminas-test
 ```
 
 To run tests:

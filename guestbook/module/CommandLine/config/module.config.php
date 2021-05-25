@@ -1,7 +1,7 @@
 <?php
 namespace CommandLine;
 
-use Zend\Mvc\Router\Console\Simple;
+use Laminas\Mvc\Router\Console\Simple;
 
 return [
     'console' => [

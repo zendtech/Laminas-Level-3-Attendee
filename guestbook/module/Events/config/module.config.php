@@ -4,13 +4,13 @@ namespace Events;
 use PDO;
 use Events\Doctrine\Factory\SignupDelegatorFactory;
 
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\Mvc\Controller\LazyControllerAbstractFactory;
-use Zend\ServiceManager\AbstractFactory\{ConfigAbstractFactory, ReflectionBasedAbstractFactory};
+use Laminas\Router\Http\Literal;
+use Laminas\Router\Http\Segment;
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Mvc\Controller\LazyControllerAbstractFactory;
+use Laminas\ServiceManager\AbstractFactory\{ConfigAbstractFactory, ReflectionBasedAbstractFactory};
 
-//use Zend\Mvc\I18n\Router\TranslatorAwareTreeRouteStack;
+//use Laminas\Mvc\I18n\Router\TranslatorAwareTreeRouteStack;
 
 return [
     'navigation' => [

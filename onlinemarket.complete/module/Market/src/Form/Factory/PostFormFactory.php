@@ -4,9 +4,9 @@ namespace Market\Form\Factory;
 use Model\Entity\Listing;
 use Market\Form\PostForm;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 //*** AGGREGATE HYDRATOR LAB: this is no longer needed
-use Zend\Hydrator\ObjectProperty;
+use Laminas\Hydrator\ObjectProperty;
 
 class PostFormFactory implements FactoryInterface
 {

@@ -3,7 +3,7 @@ namespace PrivateMessages\Hydrator;
 
 use Exception;
 use PrivateMessages\Model\Message;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Hydrator\HydratorInterface;
 
 class TableHydrator implements HydratorInterface
 {

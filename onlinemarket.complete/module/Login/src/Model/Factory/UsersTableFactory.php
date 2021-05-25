@@ -4,8 +4,8 @@ namespace Login\Model\Factory;
 use Model\Entity\User;
 use Login\Model\UsersTable;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\Hydrator\ClassMethods;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ClassMethods;
 
 class UsersTableFactory implements FactoryInterface
 {

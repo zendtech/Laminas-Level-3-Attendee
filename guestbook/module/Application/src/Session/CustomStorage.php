@@ -2,10 +2,10 @@
 namespace Application\Session;
 
 use Zend\StdLib\ArrayObject;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Session\Exception;
-use Zend\Session\Storage\ArrayStorage;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Session\Exception;
+use Laminas\Session\Storage\ArrayStorage;
 
 class CustomStorage extends ArrayStorage
 {
@@ -19,7 +19,7 @@ class CustomStorage extends ArrayStorage
      * Instantiates storage as an ArrayObject, allowing property access.
      * Also sets the initial request access time.
      *
-     * @param Zend\Db\Adapter\Adapter $adapter
+     * @param Laminas\Db\Adapter\Adapter $adapter
      */
     public function __construct(
         Adapter $adapter,

@@ -3,9 +3,9 @@ namespace Logging;
 
 use Logging\Logger\Logging;
 use Logging\Logger\Factory\ {LoggerFactory,ListenerFactory};
-use Zend\Log\Logger;
-use Zend\Mvc\ {MvcEvent};
-use Zend\ServiceManager\Proxy\LazyServiceFactory;
+use Laminas\Log\Logger;
+use Laminas\Mvc\ {MvcEvent};
+use Laminas\ServiceManager\Proxy\LazyServiceFactory;
 
 class Module
 {

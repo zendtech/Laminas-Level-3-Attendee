@@ -2,9 +2,9 @@
 namespace Translation;
 
 use Locale;
-use Zend\I18n\Translator\TranslatorServiceFactory;
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\I18n\View\Helper as I18nHelper;
+use Laminas\I18n\Translator\TranslatorServiceFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\I18n\View\Helper as I18nHelper;
 
 return [
     'translator' => [

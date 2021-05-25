@@ -5,10 +5,10 @@ use Application\Event\AppEvent;
 use Application\Event\Listener\ {ErrorLog, ErrorLogWithFilter};
 use Application\Session\ {CustomStorage, CustomManager};
 
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\LazyListener;
-use Zend\Session\Container;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\LazyListener;
+use Laminas\Session\Container;
+use Laminas\Db\Adapter\Adapter;
 
 class Module
 {

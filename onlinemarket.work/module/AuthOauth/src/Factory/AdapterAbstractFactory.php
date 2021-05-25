@@ -5,11 +5,11 @@ use Exception;
 use Interop\Container\ContainerInterface;
 
 // ZF 3
-use Zend\ServiceManager\Factory\AbstractFactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 // ZF 2.4
-// use Zend\ServiceManager\AbstractFactoryInterface;
+// use Laminas\ServiceManager\AbstractFactoryInterface;
 
 class AdapterAbstractFactory implements AbstractFactoryInterface
 {

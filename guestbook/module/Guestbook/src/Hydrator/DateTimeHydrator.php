@@ -3,7 +3,7 @@ namespace Guestbook\Hydrator;
 
 use DateTime;
 use Guestbook\Model\Guestbook
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Hydrator\HydratorInterface;
 
 class DateTimeHydrator implements HydratorInterface
 {

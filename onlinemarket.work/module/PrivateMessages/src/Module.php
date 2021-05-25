@@ -4,11 +4,11 @@ namespace PrivateMessages;
 use PrivateMessages\Hydrator\ {PrivateHydrator,BlockCipherHydrator,FormHydrator,TableHydrator};
 use PrivateMessages\Model\Message;
 
-use Zend\Hydrator\ClassMethods;
-use Zend\Mvc\MvcEvent;
-use Zend\Crypt\BlockCipher;
-use Zend\Crypt\Symmetric\Exception\NotFoundException;
-use Zend\Hydrator\Aggregate\AggregateHydrator;
+use Laminas\Hydrator\ClassMethods;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Crypt\BlockCipher;
+use Laminas\Crypt\Symmetric\Exception\NotFoundException;
+use Laminas\Hydrator\Aggregate\AggregateHydrator;
 
 class Module
 {

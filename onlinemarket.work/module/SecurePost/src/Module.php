@@ -1,7 +1,7 @@
 <?php
 namespace SecurePost;
 
-use Zend\Form\Element\Csrf;
+use Laminas\Form\Element\Csrf;
 use Interop\Container\ContainerInterface;
 
 class Module

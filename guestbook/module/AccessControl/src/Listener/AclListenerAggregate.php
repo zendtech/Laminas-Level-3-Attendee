@@ -1,11 +1,11 @@
 <?php
 namespace AccessControl\Listener;
 
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
-use Zend\Permissions\Acl\Acl;
-use Zend\Authentication\AuthenticationService;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
+use Laminas\Permissions\Acl\Acl;
+use Laminas\Authentication\AuthenticationService;
 
 class AclListenerAggregate implements ListenerAggregateInterface
 {

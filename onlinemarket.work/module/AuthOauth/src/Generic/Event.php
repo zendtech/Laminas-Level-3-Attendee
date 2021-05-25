@@ -1,7 +1,7 @@
 <?php
 namespace AuthOauth\Generic;
-use Zend\EventManager\Event as ZendEvent;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\EventManager\Event as ZendEvent;
+use Laminas\ServiceManager\ServiceManager;
 class Event extends ZendEvent
 {
     const EVENT_ADD_OAUTH_USER = 'auth-oauth-add-user';    

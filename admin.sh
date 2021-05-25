@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage: admin.sh up|down|shell
 echo "Usage: admin.sh up|down|build|ls|init|perms|shell"
-export CONTAINER="laminas_2"
+export CONTAINER="laminas_3"
 if [[ "$1" = "up" ]]; then
     docker-compose up -d
     docker exec $CONTAINER /bin/bash -c "/tmp/init.sh --perms --start"

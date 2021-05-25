@@ -4,7 +4,7 @@ namespace PrivateMessages\Hydrator;
 use Exception;
 use PrivateMessages\Model\Message;
 use PrivateMessages\Traits\BlockCipherTrait;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Hydrator\HydratorInterface;
 
 class PrivateHydrator implements HydratorInterface
 {

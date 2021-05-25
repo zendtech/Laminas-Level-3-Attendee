@@ -7,7 +7,7 @@ use Admin\Domain\SessionService;
 use Psr\Http\Message\ {ResponseInterface,ServerRequestInterface};
 use Psr\Http\Server\ {MiddlewareInterface.RequestHandlerInterface};
 use Psr\Container\ContainerInterface;
-use Zend\Diactoros\Response\ {HtmlResponse, RedirectResponse};
+use Laminas\Diactoros\Response\ {HtmlResponse, RedirectResponse};
 
 class AuthMiddleware implements MiddlewareInterface
 {

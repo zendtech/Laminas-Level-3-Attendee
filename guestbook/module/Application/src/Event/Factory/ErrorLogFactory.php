@@ -3,7 +3,7 @@ namespace Application\Event\Factory;
 
 use Application\Event\Listener\ErrorLog;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ErrorLogFactory implements FactoryInterface
 {

@@ -7,11 +7,11 @@
 
 namespace Application;
 
-use Zend\Router\Http\ {Literal, Segment};
-use Zend\Mvc\Router\Console\Simple;
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\Navigation\Service\NavigationAbstractServiceFactory;
-use Zend\Mvc\Controller\Plugin\FlashMessenger;
+use Laminas\Router\Http\ {Literal, Segment};
+use Laminas\Mvc\Router\Console\Simple;
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Navigation\Service\NavigationAbstractServiceFactory;
+use Laminas\Mvc\Controller\Plugin\FlashMessenger;
 
 return [
     'router' => [

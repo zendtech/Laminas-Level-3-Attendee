@@ -10,12 +10,12 @@ namespace AuthOauth\Generic;
 use AuthOauth\Generic\User;
 
 // ZF 2.4
-// use Zend\Stdlib\Hydrator\HydratorInterface;
-// use Zend\Stdlib\Hydrator\Reflection;
+// use Laminas\Stdlib\Hydrator\HydratorInterface;
+// use Laminas\Stdlib\Hydrator\Reflection;
 
 // ZF 3
-use Zend\Hydrator\HydratorInterface;
-use Zend\Hydrator\Reflection;
+use Laminas\Hydrator\HydratorInterface;
+use Laminas\Hydrator\Reflection;
 
 class Hydrator implements HydratorInterface
 {

@@ -1,8 +1,8 @@
 <?php
 namespace IpCheck;
 
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
 
 class Module
 {

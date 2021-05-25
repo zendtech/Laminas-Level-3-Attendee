@@ -1,7 +1,7 @@
 <?php
 namespace PrivateMessages\Traits;
 
-use Zend\Crypt\BlockCipher;
+use Laminas\Crypt\BlockCipher;
 
 trait BlockCipherTrait
 {

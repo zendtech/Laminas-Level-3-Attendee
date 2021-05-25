@@ -7,9 +7,9 @@ use Model\Traits\UsersTableTrait;
 
 use Registration\Form\RegForm;
 
-use Zend\Log\Logger;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Log\Logger;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class RegController extends AbstractActionController
 {

@@ -1,8 +1,8 @@
 <?php
 namespace Application\Event\Listener;
 use Application\Event\AppEvent;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 class ErrorLogAggregate implements ListenerAggregateInterface
 {
     public function attach(EventManagerInterface $e, $priority = 100)

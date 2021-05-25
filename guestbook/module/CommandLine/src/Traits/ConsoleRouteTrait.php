@@ -1,7 +1,7 @@
 <?php
 namespace CommandLine\Traits;
 
-use Zend\Console\Console;
+use Laminas\Console\Console;
 use ZF\Console\Route;
 
 trait ConsoleRouteTrait

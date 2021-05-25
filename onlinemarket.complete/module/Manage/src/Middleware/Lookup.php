@@ -3,7 +3,7 @@ namespace Manage\Middleware;
 
 use PDO;
 //*** add the proper "use" statements
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Response;
 use Interop\Http\ServerMiddleware\ {MiddlewareInterface,DelegateInterface};
 use Psr\Http\Message\ {ServerRequestInterface, ResponseInterface};
 

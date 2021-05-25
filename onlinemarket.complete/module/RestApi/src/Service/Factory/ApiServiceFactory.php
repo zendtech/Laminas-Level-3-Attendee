@@ -5,7 +5,7 @@ use RestApi\Service\ApiService;
 use Model\Table\ListingsTable;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ApiServiceFactory implements FactoryInterface
 {

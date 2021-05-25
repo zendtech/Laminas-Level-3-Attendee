@@ -3,7 +3,7 @@ namespace AccessControl\Acl\Factory;
 
 use AccessControl\Acl\GuestbookAcl;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class GuestbookAclFactory implements FactoryInterface
 {

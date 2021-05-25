@@ -2,8 +2,8 @@
 namespace PrivateMessages\Form\Factory;
 
 use PrivateMessages\Hydrator\FormHydrator;
-use Zend\Hydrator\ClassMethods;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ClassMethods;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
 use PrivateMessages\Form\Send as SendForm;

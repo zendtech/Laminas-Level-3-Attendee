@@ -1,8 +1,8 @@
 <?php
 namespace Logging\Logger;
 
-use Zend\Log\Logger as ZendLogger;
+use Laminas\Log\Logger as LaminasLogger;
 
-class Logging extends ZendLogger
+class Logging extends LaminasLogger
 {
 }

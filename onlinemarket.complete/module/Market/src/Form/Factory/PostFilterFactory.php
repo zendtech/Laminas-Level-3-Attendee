@@ -3,7 +3,7 @@ namespace Market\Form\Factory;
 
 use Market\Form\PostFilter;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class PostFilterFactory implements FactoryInterface
 {

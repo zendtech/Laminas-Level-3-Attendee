@@ -2,9 +2,9 @@
 declare(strict_types=1);
 namespace Manage\Domain;
 
-use Zend\Db\Sql\Sql;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\Sql\Sql;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
 use Psr\Container\ContainerInterface;
 
 class ListingsService
@@ -28,7 +28,7 @@ class ListingsService
      *
      * @param int $limit (lines per page)
      * @param int $offset (lines per page * current page number)
-     * @return Zend\Db\ResultSet\ResultSet $result
+     * @return Laminas\Db\ResultSet\ResultSet $result
      */
     public function fetchAllPaginated(int $limit = 20, int $offset = 0)
     {

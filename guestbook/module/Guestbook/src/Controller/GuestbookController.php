@@ -6,8 +6,8 @@ use Guestbook\Form\Guestbook as GuestbookForm;
 use Guestbook\Model\Guestbook as GuestbookModel;
 use Guestbook\Mapper\Guestbook as GuestbookMapper;
 
-use Zend\View\Model\ {ViewModel, JsonModel};
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ {ViewModel, JsonModel};
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class GuestbookController extends AbstractActionController
 {

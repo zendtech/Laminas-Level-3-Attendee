@@ -5,7 +5,7 @@ use PDO;
 //*** MIDDLEWARE LAB: add the proper "use" statements
 use Interop\Http\ServerMiddleware\ {???};
 use Psr\Http\Message\ {???};
-use Zend\Diactoros\???;
+use Laminas\Diactoros\???;
 
 class Lookup implements MiddlewareInterface
 {

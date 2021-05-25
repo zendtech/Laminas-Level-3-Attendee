@@ -4,7 +4,7 @@ namespace Events\Model;
 use Events\Listener\Event as RegEvent;
 use Events\Entity\Attendee;
 use Events\Entity\Registration;
-use Zend\Db\Sql\Sql;
+use Laminas\Db\Sql\Sql;
 
 // Table Structure:
 /*
@@ -50,7 +50,7 @@ class RegistrationTable extends Base
     // ON `a`.`registration_id` = `r`.`id` WHERE `r`.`event_id` = '{$eventId}'
     protected function findUsingSqlJoin($eventId)
     {
-        // use Zend\Db\Sql\Sql to do a JOIN
+        // use Laminas\Db\Sql\Sql to do a JOIN
         $adapter = $this->tableGateway->getAdapter();
         $sql = new Sql($adapter);
         $select = $sql->select();
@@ -76,7 +76,7 @@ class RegistrationTable extends Base
         $final[$regId] = $regEntity;
     }
 
-    //*** DELEGATING HYDRATOR LAB: use the Zend\Hydrator\DelegatingHydrator to extract data instead of the one currently used
+    //*** DELEGATING HYDRATOR LAB: use the Laminas\Hydrator\DelegatingHydrator to extract data instead of the one currently used
     public function save(Registration $reg)
     {
         //$hydrator = $this->tableGateway->getResultSetPrototype()->getHydrator();

@@ -1,8 +1,8 @@
 <?php
 namespace Login\Security\Factory;
 
-use Zend\Crypt\BlockCipher;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Crypt\BlockCipher;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
 class BlockCipherFactory implements FactoryInterface

@@ -1,7 +1,7 @@
 <?php
-use Zend\Stratigility\MiddlewarePipe;
-use Zend\Stratigility\NoopFinalHandler;
-use Zend\Diactoros\ {Server, Response};
+use Laminas\Stratigility\MiddlewarePipe;
+use Laminas\Stratigility\NoopFinalHandler;
+use Laminas\Diactoros\ {Server, Response};
 use Test\ {Test, Open, Main, Close};
 
 require __DIR__ . '/../vendor/autoload.php';

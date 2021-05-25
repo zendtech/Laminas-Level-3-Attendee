@@ -1,7 +1,7 @@
 <?php
 namespace Logging;
 
-use Zend\Log\Logger;
+use Laminas\Log\Logger;
 
 trait LoggerTrait
 {

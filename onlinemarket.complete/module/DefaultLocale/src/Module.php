@@ -2,11 +2,11 @@
 namespace DefaultLocale;
 
 use DefaultLocale\Middleware\Browser;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 //*** PSR7BRIDGE LAB: add the required "use" statements
 use Psr\Http\Message\ResponseInterface;
-use Zend\Psr7Bridge\Psr7ServerRequest;
-use Zend\Psr7Bridge\Psr7Response;
+use Laminas\Psr7Bridge\Psr7ServerRequest;
+use Laminas\Psr7Bridge\Psr7Response;
 
 class Module
 {
@@ -22,13 +22,13 @@ class Module
     public function handleMiddleware(MvcEvent $e)
     {
 		//*** PSR7BRIDGE LAB: define PSR7 compliant request and response objects using Psr7Bridge classes
-        $request  = Psr7ServerRequest::fromZend($e->getRequest());
-        $response = Psr7Response::fromZend($e->getResponse());
+        $request  = Psr7ServerRequest::fromLaminas($e->getRequest());
+        $response = Psr7Response::fromLaminas($e->getResponse());
         $done     = function ($request, $response) {};
         $result   = (new Browser())($request, $response, $done);
         if ($result) {
 			//*** PSR7BRIDGE LAB: convert the PSR-7 response to a "native" Zend Framework response
-            return Psr7Response::toZend($result);
+            return Psr7Response::toLaminas($result);
         }
     }
 }

@@ -4,11 +4,11 @@ namespace Model\Table\Factory;
 use Model\Entity\Listing;
 use Model\Table\ListingsTable;
 use Interop\Container\ContainerInterface;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 //*** DATABASE EVENTS LAB: add appropriate "use" statements
-use Zend\Db\TableGateway\Feature\EventFeature;
+use Laminas\Db\TableGateway\Feature\EventFeature;
 
 class ListingsTableFactory implements FactoryInterface
 {

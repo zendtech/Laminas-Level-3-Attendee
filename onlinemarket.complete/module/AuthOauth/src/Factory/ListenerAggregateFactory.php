@@ -3,7 +3,7 @@ namespace AuthOauth\Factory;
 
 use AuthOauth\Listener\OauthListenerAggregate;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ListenerAggregateFactory implements FactoryInterface
 {

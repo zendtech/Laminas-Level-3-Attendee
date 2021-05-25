@@ -4,10 +4,10 @@ namespace Login;
 use Login\Model\UsersTable;
 
 use Locale;
-use Zend\Mvc\MvcEvent;
-use Zend\Db\Adapter\Adapter;
-use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Adapter\DbTable\CallbackCheckAdapter;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\Authentication\Adapter\DbTable\CallbackCheckAdapter;
 
 class Module
 {
@@ -35,7 +35,7 @@ class Module
     {
         return [
             'aliases' => [
-                'Zend\Authentication\AuthenticationService' => 'login-auth-service',
+                'Laminas\Authentication\AuthenticationService' => 'login-auth-service',
             ],
             'factories' => [
                 'login-db-adapter' => function ($container) {

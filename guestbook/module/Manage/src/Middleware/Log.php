@@ -12,7 +12,7 @@ class Log implements MiddlewareInterface
     {
         $data['ip_v4_address'] = $request->getServerParams()['REMOTE_ADDR'] ?? 'Unknown';
         $data['uri']           = $request->getUri()->__toString();
-        $routeMatch = $request->getAttribute('Zend\Router\RouteMatch');
+        $routeMatch = $request->getAttribute('Laminas\Router\RouteMatch');
         $routeMatch->setParam(__CLASS__, $this->table->insert($data));
         return $delegate->process($request, $delegate);
     }

@@ -3,10 +3,10 @@ namespace CommandLine\Listener;
 
 use CommandLine\Generic\Constants;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Console\Console;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Console\Console;
 use ZF\Console\ {RouteCollection, Dispatcher};
-use Zend\EventManager\ {EventManagerInterface, AbstractListenerAggregate};
+use Laminas\EventManager\ {EventManagerInterface, AbstractListenerAggregate};
 use Interop\Container\ContainerInterface;
 
 class Aggregate extends AbstractListenerAggregate

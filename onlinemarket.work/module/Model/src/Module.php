@@ -4,7 +4,7 @@ namespace Model;
 use Interop\Container\ContainerInterface;
 
 //*** AGGREGATE HYDRATOR LAB: this is no longer needed
-use Zend\Hydrator\Reflection;
+use Laminas\Hydrator\Reflection;
 
 class Module
 {

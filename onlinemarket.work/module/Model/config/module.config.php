@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-use Zend\Hydrator\Reflection;
+use Laminas\Hydrator\Reflection;
 return [
     'service_manager' => [
         'services' => [

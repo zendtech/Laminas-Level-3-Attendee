@@ -1,9 +1,9 @@
 <?php
 namespace Market\Form;
 
-use Zend\Form\Element;
-use Zend\Form\Form;
-use Zend\Captcha;
+use Laminas\Form\Element;
+use Laminas\Form\Form;
+use Laminas\Captcha;
 
 class DeleteForm extends Form
 {

@@ -1,9 +1,9 @@
 <?php
 namespace PrivateMessages\Model;
 
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Db\ResultSet\HydratingResultSet;
 use PrivateMessages\Hydrator\PrivateHydrator;
 
 class MessagesTable

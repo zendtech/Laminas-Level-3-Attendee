@@ -1,9 +1,9 @@
 <?php
 namespace Market\Form;
 
-use Zend\Form\Form;
-use Zend\Form\Element;
-use Zend\Captcha\Image as ImageCaptcha;
+use Laminas\Form\Form;
+use Laminas\Form\Element;
+use Laminas\Captcha\Image as ImageCaptcha;
 
 class PostForm extends Form
 {

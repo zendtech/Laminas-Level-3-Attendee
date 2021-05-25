@@ -10,7 +10,7 @@ class AttendeeTable extends Base
     {
         return $this->tableGateway->select(['registration_id' => $regId]);
     }
-    //*** DELEGATING HYDRATOR LAB: use the Zend\Hydrator\DelegatingHydrator to extract data instead of the one currently used
+    //*** DELEGATING HYDRATOR LAB: use the Laminas\Hydrator\DelegatingHydrator to extract data instead of the one currently used
     public function save(Attendee $attendee)
     {
         //$hydrator = $this->tableGateway->getResultSetPrototype()->getHydrator();

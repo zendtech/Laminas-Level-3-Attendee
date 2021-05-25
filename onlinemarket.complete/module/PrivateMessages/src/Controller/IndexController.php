@@ -6,9 +6,9 @@ use PrivateMessages\Form\Send as SendForm;
 use PrivateMessages\Traits\BlockCipherTrait;
 use PrivateMessages\Model\ {Message, MessagesTable};
 
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Authentication\AuthenticationService;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Authentication\AuthenticationService;
 
 class IndexController extends AbstractActionController
 {
@@ -28,7 +28,7 @@ class IndexController extends AbstractActionController
     {
         $from = $this->sendForm->get('fromEmail');
         $from->setAttribute('value', $this->user->getEmail());
-        //*** to use this plugin, install it: "composer require zendframework/zend-mvc-plugin-flashmessenger"
+        //*** to use this plugin, install it: "composer require laminas/laminas-mvc-plugin-flashmessenger"
         $status = $this->flashMessenger()->getMessages();
         return $this->setViewModel($status);
     }
@@ -51,7 +51,7 @@ class IndexController extends AbstractActionController
                 }
             }
         }
-        //*** to use this plugin, install it: "composer require zendframework/zend-mvc-plugin-flashmessenger"
+        //*** to use this plugin, install it: "composer require laminas/laminas-mvc-plugin-flashmessenger"
         $this->flashMessenger()->addMessage($status);
         return $this->setViewModel($status);
     }

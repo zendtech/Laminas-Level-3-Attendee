@@ -3,9 +3,9 @@ namespace AuthOauth\Adapter;
 
 use Exception;
 use AuthOauth\Generic\Constants;
-use Zend\Authentication\Exception\InvalidArgumentException;
-use Zend\Authentication\Exception\RuntimeException;
-use Zend\Authentication\Result;
+use Laminas\Authentication\Exception\InvalidArgumentException;
+use Laminas\Authentication\Exception\RuntimeException;
+use Laminas\Authentication\Result;
 use League\OAuth2\Client\Provider\Google as GoogleProvider;
 
 class GoogleAdapter extends BaseAdapter
@@ -23,7 +23,7 @@ class GoogleAdapter extends BaseAdapter
     /**
      * Authenticate using logic provided by the PHP League Google Client docs
      *
-     * @param Zend\Authentication\AuthenticationService $service | NULL
+     * @param Laminas\Authentication\AuthenticationService $service | NULL
      * @return Result The authentication result
      * @throws RuntimeException
     */

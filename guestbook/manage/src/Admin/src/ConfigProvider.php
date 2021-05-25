@@ -2,8 +2,8 @@
 declare(strict_types=1);
 namespace Admin;
 
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
 /**
  * The configuration provider for the Admin module
  *

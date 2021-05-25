@@ -1,10 +1,10 @@
 <?php
 namespace Guestbook;
 
-use Zend\Db\Adapter\Adapter;
-use Zend\Mvc\MvcEvent;
-use Zend\Db\TableGateway\Feature\EventFeatureEventsInterface;
-use Zend\Db\TableGateway\Feature\EventFeature\TableGatewayEvent;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Db\TableGateway\Feature\EventFeatureEventsInterface;
+use Laminas\Db\TableGateway\Feature\EventFeature\TableGatewayEvent;
 use Guestbook\Mapper\Guestbook as Mapper;
 
 class Module

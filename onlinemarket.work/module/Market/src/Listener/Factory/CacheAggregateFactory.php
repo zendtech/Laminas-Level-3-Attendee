@@ -3,7 +3,7 @@ namespace Market\Listener\Factory;
 
 use Market\Listener\CacheAggregate;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class CacheAggregateFactory implements FactoryInterface
 {

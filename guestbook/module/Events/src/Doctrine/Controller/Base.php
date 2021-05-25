@@ -1,7 +1,7 @@
 <?php
 namespace Events\Doctrine\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Mvc\Controller\AbstractActionController;
 use Events\Doctrine\Repository\ {EventRepo, AttendeeRepo, RegistrationRepo};
 
 class Base extends AbstractActionController

@@ -38,7 +38,7 @@ class Generated4bbf607093d7c1d3a93253f71d7a3222 extends \Logging\Logger\Logging 
         return $this->valueHoldera1a5c->getWriterPluginManager();
     }
 
-    public function setWriterPluginManager(\Zend\Log\WriterPluginManager $writerPlugins)
+    public function setWriterPluginManager(\Laminas\Log\WriterPluginManager $writerPlugins)
     {
         $this->initializer010be && $this->initializer010be->__invoke($this->valueHoldera1a5c, $this, 'setWriterPluginManager', array('writerPlugins' => $writerPlugins), $this->initializer010be);
 
@@ -66,7 +66,7 @@ class Generated4bbf607093d7c1d3a93253f71d7a3222 extends \Logging\Logger\Logging 
         return $this->valueHoldera1a5c->getWriters();
     }
 
-    public function setWriters(\Zend\Stdlib\SplPriorityQueue $writers)
+    public function setWriters(\Laminas\Stdlib\SplPriorityQueue $writers)
     {
         $this->initializer010be && $this->initializer010be->__invoke($this->valueHoldera1a5c, $this, 'setWriters', array('writers' => $writers), $this->initializer010be);
 

@@ -4,8 +4,8 @@ namespace Market\Controller;
 use Market\Form\UploadTrait;
 use Market\Event\LogEvent;
 use Market\Listener\CacheAggregate;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
 //*** EMAIL LAB: add "use" statement to trigger email notification event
 //use Notification\Event\NotificationEvent;
 

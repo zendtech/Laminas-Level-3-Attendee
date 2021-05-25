@@ -2,10 +2,10 @@
 namespace DefaultLocale;
 
 use DefaultLocale\Middleware\Browser;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 use Psr\Http\Message\ResponseInterface;
-use Zend\Psr7Bridge\Psr7ServerRequest;
-use Zend\Psr7Bridge\Psr7Response;
+use Laminas\Psr7Bridge\Psr7ServerRequest;
+use Laminas\Psr7Bridge\Psr7Response;
 
 class Module
 {
@@ -19,12 +19,12 @@ class Module
     }
     public function handleMiddleware(MvcEvent $e)
     {
-        $request  = Psr7ServerRequest::fromZend($e->getRequest());
-        $response = Psr7Response::fromZend($e->getResponse());
+        $request  = Psr7ServerRequest::fromLaminas($e->getRequest());
+        $response = Psr7Response::fromLaminas($e->getResponse());
         $done     = function ($request, $response) {};
         $result   = (new Browser())($request, $response, $done);
         if ($result) {
-            return Psr7Response::toZend($result);
+            return Psr7Response::toLaminas($result);
         }
     }
 }

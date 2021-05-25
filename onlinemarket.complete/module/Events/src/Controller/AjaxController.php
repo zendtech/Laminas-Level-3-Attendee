@@ -3,8 +3,8 @@ namespace Events\Controller;
 
 use Events\Traits\ {EventTableTrait, RegTableTrait, AttendeeTableTrait};
 use Events\Model\ {EventTable, RegistrationTable, AttendeeTable};
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ {ViewModel, JsonModel};
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ {ViewModel, JsonModel};
 
 class AjaxController extends AbstractActionController
 {

@@ -1,8 +1,8 @@
 <?php
 namespace Login\Form\Factory;
 
-use Zend\Hydrator\ClassMethods;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ClassMethods;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
 use Login\Form\Login as LoginForm;

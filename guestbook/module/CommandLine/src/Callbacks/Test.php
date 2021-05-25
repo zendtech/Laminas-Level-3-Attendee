@@ -1,7 +1,7 @@
 <?php
 namespace CommandLine\Callbacks;
 
-use Zend\Console\Prompt\Select;
+use Laminas\Console\Prompt\Select;
 
 class Test
 {

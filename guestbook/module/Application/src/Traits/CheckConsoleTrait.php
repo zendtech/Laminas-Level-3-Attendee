@@ -1,7 +1,7 @@
 <?php
 namespace Application\Traits;
 
-use Zend\Console\Request as ConsoleRequest;
+use Laminas\Console\Request as ConsoleRequest;
 
 trait CheckConsoleTrait
 {

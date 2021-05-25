@@ -2,7 +2,7 @@
 namespace RestApi\Service;
 
 use Events\TableModule\Model\ {EventTable, RegistrationTable, AttendeeTable};
-use Zend\Db\Sql\ {Sql, Where};
+use Laminas\Db\Sql\ {Sql, Where};
 
 class ApiService
 {

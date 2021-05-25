@@ -5,7 +5,7 @@ use Registration\Form\RegForm;
 use Registration\Controller\RegController;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 
 class RegControllerFactory implements FactoryInterface

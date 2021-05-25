@@ -2,10 +2,10 @@
 namespace AccessControl\Listener;
 
 use AccessControl\Acl\MarketAcl;
-use Zend\Authentication\AuthenticationService;
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
-use Zend\Permissions\Acl\Acl;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
+use Laminas\Permissions\Acl\Acl;
 
 class AclListenerAggregate extends AbstractListenerAggregate
 {

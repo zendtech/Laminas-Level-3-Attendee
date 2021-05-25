@@ -3,7 +3,7 @@ namespace AuthOauth\Adapter;
 
 use Exception;
 use AuthOauth\Generic\AuthServiceTrait;
-use Zend\Authentication\Adapter\AbstractAdapter;
+use Laminas\Authentication\Adapter\AbstractAdapter;
 
 abstract class BaseAdapter extends AbstractAdapter
 {

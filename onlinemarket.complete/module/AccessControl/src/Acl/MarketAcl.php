@@ -1,7 +1,7 @@
 <?php
 namespace AccessControl\Acl;
 
-use Zend\Permissions\Acl\Acl;
+use Laminas\Permissions\Acl\Acl;
 class MarketAcl extends Acl
 {
     const DEFAULT_ROLE = 'guest';

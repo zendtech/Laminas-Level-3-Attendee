@@ -15,7 +15,7 @@ then please install as per the [documentation](https://getcomposer.org/doc/00-in
 To create your new Zend Framework project:
 
 ```bash
-$ composer create-project -sdev zendframework/skeleton-application path/to/install
+$ composer create-project -sdev laminas/skeleton-application path/to/install
 ```
 
 Once installed, you can test it out immediately using PHP's built-in web server:
@@ -35,7 +35,7 @@ interfaces. You can then visit the site at http://localhost:8080/
 
 ## Development mode
 
-The skeleton ships with [zf-development-mode](https://github.com/zfcampus/zf-development-mode)
+The skeleton ships with [laminas-development-mode](https://github.com/laminas/laminas-development-mode)
 by default, and provides three aliases for consuming the script it ships with:
 
 ```bash
@@ -63,7 +63,7 @@ To run the supplied skeleton unit tests, you need to do one of the following:
 - After initial project creation, install [zend-test](https://zendframework.github.io/zend-test/):
 
   ```bash
-  $ composer require --dev zendframework/zend-test
+  $ composer require --dev laminas/laminas-test
   ```
 
 Once testing support is present, you can run the tests using:
@@ -208,7 +208,7 @@ Additionally, it comes with some basic tests for the shipped
 If you want to add these QA tools, execute the following:
 
 ```bash
-$ composer require --dev phpunit/phpunit squizlabs/php_codesniffer zendframework/zend-test
+$ composer require --dev phpunit/phpunit squizlabs/php_codesniffer laminas/laminas-test
 ```
 
 We provide aliases for each of these tools in the Composer configuration:

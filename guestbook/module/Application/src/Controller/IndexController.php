@@ -9,8 +9,8 @@ namespace Application\Controller;
 
 use Application\Traits\LogFileTrait;
 use Application\Event\AppEvent;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {

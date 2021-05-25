@@ -1,6 +1,6 @@
 <?php
 //*** GET RID OF THIS ASAP!!!
-//*** Currently need this because PHP 7.2 breaks Zend\Form\Form::bindValues()
+//*** Currently need this because PHP 7.2 breaks Laminas\Form\Form::bindValues()
 
 /**
  * Zend Framework (http://framework.zend.com/)
@@ -13,10 +13,10 @@
 namespace WorkArounds\Form;
 
 use Traversable;
-use Zend\Form\ {Fieldset, FormInterface, FieldsetInterface};
-use Zend\Form\Element\Collection;
-use Zend\Hydrator\HydratorInterface;
-use Zend\InputFilter\
+use Laminas\Form\ {Fieldset, FormInterface, FieldsetInterface};
+use Laminas\Form\Element\Collection;
+use Laminas\Hydrator\HydratorInterface;
+use Laminas\InputFilter\
        {CollectionInputFilter,
         InputFilter,
         InputFilterAwareInterface,
@@ -24,7 +24,7 @@ use Zend\InputFilter\
         InputFilterProviderInterface,
         InputProviderInterface,
         ReplaceableInputInterface};
-use Zend\Stdlib\ArrayUtils;
+use Laminas\Stdlib\ArrayUtils;
 
 class Form extends Fieldset implements FormInterface
 {
@@ -292,8 +292,8 @@ class Form extends Fieldset implements FormInterface
             throw new Exception\InvalidArgumentException(sprintf(
                 '%s expects the $flags argument to be one of "%s" or "%s"; received "%s"',
                 __METHOD__,
-                'Zend\Form\FormInterface::VALUES_NORMALIZED',
-                'Zend\Form\FormInterface::VALUES_RAW',
+                'Laminas\Form\FormInterface::VALUES_NORMALIZED',
+                'Laminas\Form\FormInterface::VALUES_RAW',
                 $flags
             ));
         }

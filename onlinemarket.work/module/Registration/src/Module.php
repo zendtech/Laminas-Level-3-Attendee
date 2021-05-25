@@ -2,8 +2,8 @@
 namespace Registration;
 
 use Model\Table\UsersTable;
-use Zend\Mvc\MvcEvent;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Db\Adapter\Adapter;
 
 class Module
 {

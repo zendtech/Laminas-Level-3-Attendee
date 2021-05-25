@@ -3,7 +3,7 @@ namespace Events\Listener;
 
 use Logging\Logger\Logging;
 use Interop\Container\ContainerInterface;
-use Zend\EventManager\ {AbstractListenerAggregate,EventManagerInterface,LazyListener};
+use Laminas\EventManager\ {AbstractListenerAggregate,EventManagerInterface,LazyListener};
 
 class Aggregate extends AbstractListenerAggregate
 {

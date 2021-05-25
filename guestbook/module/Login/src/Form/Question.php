@@ -1,9 +1,9 @@
 <?php
 namespace Login\Form;
 
-use Zend\Form\ {Fieldset, Element};
-use Zend\InputFilter\ {InputFilter, FileInput};
-use Zend\Hydrator\ClassMethods;
+use Laminas\Form\ {Fieldset, Element};
+use Laminas\InputFilter\ {InputFilter, FileInput};
+use Laminas\Hydrator\ClassMethods;
 class Register extends Fieldset
 {
     public function addElements()

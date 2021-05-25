@@ -1,8 +1,8 @@
 <?php
 namespace Cache;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Cache\StorageFactory;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Cache\StorageFactory;
 
 class Module
 {

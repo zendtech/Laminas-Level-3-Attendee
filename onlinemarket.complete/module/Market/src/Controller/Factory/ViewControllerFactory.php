@@ -4,7 +4,7 @@ namespace Market\Controller\Factory;
 
 use Market\Controller\ViewController;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ViewControllerFactory implements FactoryInterface
 {

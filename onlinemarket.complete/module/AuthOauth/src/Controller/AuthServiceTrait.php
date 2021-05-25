@@ -1,7 +1,7 @@
 <?php
 namespace AuthOauth\Controller;
 
-use Zend\Authentication\AuthenticationService;
+use Laminas\Authentication\AuthenticationService;
 trait AuthServiceTrait
 {
     protected $authService;

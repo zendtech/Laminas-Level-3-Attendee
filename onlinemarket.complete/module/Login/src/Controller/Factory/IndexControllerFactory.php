@@ -6,7 +6,7 @@ use Login\Form\Login as LoginForm;
 use Login\Form\Register as RegForm;
 use Login\Model\UsersTable;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 
 class IndexControllerFactory implements FactoryInterface

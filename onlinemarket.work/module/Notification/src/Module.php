@@ -2,7 +2,7 @@
 namespace Notification;
 
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 use Interop\Container\ContainerInterface;
 
 class Module

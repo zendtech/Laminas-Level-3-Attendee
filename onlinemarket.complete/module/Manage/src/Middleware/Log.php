@@ -14,7 +14,7 @@ class Log implements MiddlewareInterface
         $data['ip_v4_address'] = $request->getServerParams()['REMOTE_ADDR'];
         $data['uri']           = $request->getUri()->__toString();
         //*** optionally, set a routematch param which might be useful later
-        $routeMatch = $request->getAttribute('Zend\Router\RouteMatch');
+        $routeMatch = $request->getAttribute('Laminas\Router\RouteMatch');
         $routeMatch->setParam(__CLASS__, $this->table->insert($data));
         // use $delegate to move to the next middleware class in the pipe
         return $delegate->process($request, $delegate);

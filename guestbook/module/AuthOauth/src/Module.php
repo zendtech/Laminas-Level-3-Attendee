@@ -2,8 +2,8 @@
 namespace AuthOauth;
 
 use UnexpectedValueException;
-use Zend\Mvc\ {MvcEvent, InjectApplicationEventInterface};
-use Zend\Session\Container;
+use Laminas\Mvc\ {MvcEvent, InjectApplicationEventInterface};
+use Laminas\Session\Container;
 
 use AuthOauth\Generic\ {User, Hydrator};
 use AuthOauth\Adapter\GoogleAdapter;

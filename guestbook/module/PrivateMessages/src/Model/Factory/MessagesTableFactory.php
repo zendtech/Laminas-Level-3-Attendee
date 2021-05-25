@@ -4,7 +4,7 @@ namespace PrivateMessages\Model\Factory;
 use PrivateMessages\Model\ {Message, MessagesTable};
     
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class MessagesTableFactory implements FactoryInterface
 {

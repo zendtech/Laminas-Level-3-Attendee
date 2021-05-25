@@ -4,9 +4,9 @@ namespace MyDoctrine;
 use MyDoctrine\Repository\ {AttendeeRepo, EventRepo, RegistrationRepo};
 use MyDoctrine\Controller\RepoAwareInterface;
 
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\Db\Adapter\Adapter;
-use Zend\Filter;
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Filter;
 
 class Module
 {

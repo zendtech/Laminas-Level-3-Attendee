@@ -3,10 +3,10 @@ namespace Login\Model;
 
 use Application\Model\ {AbstractTable, AbstractModel};
 use Login\Security\Password;
-use Zend\Hydrator\ClassMethods;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Hydrator\ClassMethods;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
 
 class UsersTable extends AbstractTable
 {

@@ -6,7 +6,7 @@ use InvalidArgumentException;
 use Application\Traits\ServiceManagerTrait;
 use Interop\Http\ServerMiddleware\ {MiddlewareInterface,DelegateInterface};
 use Psr\Http\Message\ {ServerRequestInterface, ResponseInterface};
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 
 class IpBlock implements MiddlewareInterface
 {
@@ -53,7 +53,7 @@ class IpBlock implements MiddlewareInterface
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
         $ipAddr = $request->getServerParams()['REMOTE_ADDR'];
-        $routeMatch = $request->getAttribute('Zend\Router\RouteMatch');
+        $routeMatch = $request->getAttribute('Laminas\Router\RouteMatch');
 
         if (!$this->isValid($ipAddr)) {
             $routeMatch->setParam('controller', self::DEFAULT_CONTROLLER);

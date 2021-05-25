@@ -4,7 +4,7 @@ namespace Admin\Handler;
 
 use Admin\Domain\GuestbookService;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
+use Mezzio\Template\TemplateRendererInterface;
 
 class AnyHandlerFactory
 {

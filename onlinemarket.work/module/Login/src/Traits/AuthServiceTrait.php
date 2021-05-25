@@ -1,7 +1,7 @@
 <?php
 namespace Login\Traits;
 
-use Zend\Authentication\AuthenticationService;
+use Laminas\Authentication\AuthenticationService;
 
 trait AuthServiceTrait
 {

@@ -1,7 +1,7 @@
 <?php
 namespace RestApi\Service;
 
-use Zend\Db\Sql\Sql;
+use Laminas\Db\Sql\Sql;
 
 class ApiService
 {

@@ -3,7 +3,7 @@
 namespace AccessControl;
 
 use AccessControl\Listener\AclListenerAggregate;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 
 class Module
 {

@@ -1,11 +1,11 @@
 <?php
 namespace Guestbook\Form;
 
-use Zend\Form\ {Form,Element};
-use Zend\InputFilter\ {InputFilter, FileInput};
-use Zend\Filter\File\RenameUpload;
-use Zend\Validator\File\ {FilesSize, IsImage, ImageSize};
-use Zend\Hydrator\ObjectProperty;
+use Laminas\Form\ {Form,Element};
+use Laminas\InputFilter\ {InputFilter, FileInput};
+use Laminas\Filter\File\RenameUpload;
+use Laminas\Validator\File\ {FilesSize, IsImage, ImageSize};
+use Laminas\Hydrator\ObjectProperty;
 class Guestbook extends Form
 {
     protected $config;

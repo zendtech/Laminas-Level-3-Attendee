@@ -4,9 +4,9 @@
  */
 namespace SecurePost;
 
-use Zend\Form\Element\Csrf;
+use Laminas\Form\Element\Csrf;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\DelegatorFactoryInterface;
+use Laminas\ServiceManager\Factory\DelegatorFactoryInterface;
 
 class AddsCsrf implements DelegatorFactoryInterface
 {

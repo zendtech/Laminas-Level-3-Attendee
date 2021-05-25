@@ -1,6 +1,6 @@
 <?php
 namespace Application\Event\Listener;
-use Zend\EventManager\FilterChain;
+use Laminas\EventManager\FilterChain;
 trait FilterTrait
 {
     private $filters = [];

@@ -1,7 +1,7 @@
 <?php
 namespace Market\Event;
 
-use Zend\EventManager\Event;
+use Laminas\EventManager\Event;
 
 class LogEvent extends Event
 {

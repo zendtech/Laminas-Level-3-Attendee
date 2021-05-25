@@ -2,9 +2,9 @@
 //*** CACHE LAB
 namespace Cache;
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 //*** add the appropriate "use" statements
-use Zend\Cache\StorageFactory;
+use Laminas\Cache\StorageFactory;
 
 class Module
 {

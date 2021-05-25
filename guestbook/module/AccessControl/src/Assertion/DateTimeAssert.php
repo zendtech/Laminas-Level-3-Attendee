@@ -2,7 +2,7 @@
 namespace AccessControl\Assertion;
 
 use DateTime;
-use Zend\Permissions\Acl\ 
+use Laminas\Permissions\Acl\ 
        {Acl,
         Role\RoleInterface,
         Resource\ResourceInterface,

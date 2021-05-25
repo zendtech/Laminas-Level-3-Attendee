@@ -1,7 +1,7 @@
 <?php
 namespace Translation;
 use Locale;
-use Zend\I18n\Translator\TranslatorServiceFactory;
+use Laminas\I18n\Translator\TranslatorServiceFactory;
 return [
     'translator' => [
         //'locale' => Locale::getDefault(),

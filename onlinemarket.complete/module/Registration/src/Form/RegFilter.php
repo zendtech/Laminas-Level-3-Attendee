@@ -1,10 +1,10 @@
 <?php
 namespace Registration\Form;
 
-use Zend\Filter;
-use Zend\Validator;
-use Zend\I18n\Validator\ {Alnum,Alpha};
-use Zend\InputFilter\ {InputFilter, Input};
+use Laminas\Filter;
+use Laminas\Validator;
+use Laminas\I18n\Validator\ {Alnum,Alpha};
+use Laminas\InputFilter\ {InputFilter, Input};
 
 class RegFilter extends InputFilter
 {

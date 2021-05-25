@@ -7,8 +7,8 @@ namespace IpCheck\Middleware;
 use Application\Traits\ServiceManagerTrait;
 use Interop\Http\ServerMiddleware\ {MiddlewareInterface,DelegateInterface};
 use Psr\Http\Message\ {ServerRequestInterface, ResponseInterface};
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
 class IpLog implements MiddlewareInterface
 {
     use ServiceManagerTrait;
@@ -24,7 +24,7 @@ class IpLog implements MiddlewareInterface
     {
         $data['ip_v4_address'] = $request->getServerParams()['REMOTE_ADDR'];
         $data['uri']           = $request->getUri()->__toString();
-        $routeMatch = $request->getAttribute('Zend\Router\RouteMatch');
+        $routeMatch = $request->getAttribute('Laminas\Router\RouteMatch');
         $routeMatch->setParam(__CLASS__, $this->table->insert($data));
         return $delegate->process($request, $delegate);
     }

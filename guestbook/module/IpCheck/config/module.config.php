@@ -1,7 +1,7 @@
 <?php
 namespace IpCheck;
 
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     // specify ip address to block in /config/autoload/ip.check.local.php

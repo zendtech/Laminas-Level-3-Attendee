@@ -1,6 +1,6 @@
 <?php
 namespace Application\Event\Filter;
-use Zend\EventManager\Filter\FilterIterator;
+use Laminas\EventManager\Filter\FilterIterator;
 class MaskCcnum
 {
     const CCNUM_REGEX = '!(\d{3,4})-(\d{3,4})-(\d{3,4})-(\d{3,4})!';

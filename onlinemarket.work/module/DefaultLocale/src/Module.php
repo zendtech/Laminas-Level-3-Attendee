@@ -2,11 +2,11 @@
 namespace DefaultLocale;
 
 use DefaultLocale\Middleware\Browser;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 //*** PSR7BRIDGE LAB: add the required "use" statements
 use Psr\Http\Message\ResponseInterface;
-use Zend\Psr7Bridge\Psr7ServerRequest;
-use Zend\Psr7Bridge\Psr7Response;
+use Laminas\Psr7Bridge\Psr7ServerRequest;
+use Laminas\Psr7Bridge\Psr7Response;
 
 class Module
 {

@@ -1,8 +1,8 @@
 <?php
 // code we just looked at
 include __DIR__ . '/../vendor/autoload.php';
-use Zend\Crypt\Key\Derivation\Scrypt;
-use Zend\Math\Rand;
+use Laminas\Crypt\Key\Derivation\Scrypt;
+use Laminas\Math\Rand;
 $pass = 'password';
 $salt = Rand::getBytes(32, true);
 $key  = Scrypt::calc($pass, $salt, 2048, 2, 1, 32);

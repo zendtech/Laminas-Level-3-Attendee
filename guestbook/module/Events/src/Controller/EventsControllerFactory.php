@@ -3,7 +3,7 @@ namespace Events\Controller;
 
 use Events\TableModule\Model\EventTable;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Events\Controller\ConsoleController;
 
 class ConsoleControllerFactory implements FactoryInterface

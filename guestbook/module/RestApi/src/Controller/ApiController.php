@@ -3,9 +3,9 @@ namespace RestApi\Controller;
 
 use RestApi\Service\ApiService;
 use Events\TableModule\Model\ {EventTable, RegistrationTable, AttendeeTable};
-use Zend\View\Model\JsonModel;
-use Zend\Mvc\Controller\AbstractRestfulController;
-use Zend\Stdlib\ {RequestInterface, ResponseInterface};
+use Laminas\View\Model\JsonModel;
+use Laminas\Mvc\Controller\AbstractRestfulController;
+use Laminas\Stdlib\ {RequestInterface, ResponseInterface};
 
 class ApiController extends AbstractRestfulController
 {

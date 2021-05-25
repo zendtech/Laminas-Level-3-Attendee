@@ -3,16 +3,16 @@ namespace Notification\Listener;
 
 use Application\Traits\ServiceContainerTrait;
 use Notification\Event\NotificationEvent;
-use Zend\EventManager\ {EventInterface, EventManagerInterface,AbstractListenerAggregate};
-use Zend\Mail\Message;
-use Zend\Mime\Message as MimeMessage;
-use Zend\Mime\Mime;
-use Zend\Mime\Part as MimePart;
-use Zend\Mail\Transport\Smtp;
-use Zend\Mail\Transport\SmtpOptions;
-use Zend\Mail\Transport\File;
-use Zend\Mail\Transport\FileOptions;
-use Zend\Mail\Transport\SendMail;
+use Laminas\EventManager\ {EventInterface, EventManagerInterface,AbstractListenerAggregate};
+use Laminas\Mail\Message;
+use Laminas\Mime\Message as MimeMessage;
+use Laminas\Mime\Mime;
+use Laminas\Mime\Part as MimePart;
+use Laminas\Mail\Transport\Smtp;
+use Laminas\Mail\Transport\SmtpOptions;
+use Laminas\Mail\Transport\File;
+use Laminas\Mail\Transport\FileOptions;
+use Laminas\Mail\Transport\SendMail;
 
 class Aggregate extends AbstractListenerAggregate
 {

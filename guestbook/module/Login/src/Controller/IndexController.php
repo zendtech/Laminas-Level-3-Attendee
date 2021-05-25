@@ -6,10 +6,10 @@ use Login\Model\ {User, UsersTable};
 use Login\Form\ {Login as LoginForm, Register as RegForm};
 use AuthOauth\Listener\OauthListenerAggregate;
 
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Adapter\AdapterInterface;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\Authentication\Adapter\AdapterInterface;
 
 class IndexController extends AbstractActionController
 {

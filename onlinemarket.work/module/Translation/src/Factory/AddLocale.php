@@ -3,11 +3,11 @@ namespace Translation\Factory;
 
 //*** TRANSLATION LAB: add an appropriate "use" statement for the listener aggregate
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\DelegatorFactoryInterface;
+use Laminas\ServiceManager\Factory\DelegatorFactoryInterface;
 
-use Zend\InputFilter\Input;
-use Zend\Form\Element\Select;
-use Zend\Validator\InArray;
+use Laminas\InputFilter\Input;
+use Laminas\Form\Element\Select;
+use Laminas\Validator\InArray;
 
 class AddLocale implements DelegatorFactoryInterface
 {

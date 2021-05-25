@@ -2,10 +2,10 @@
 namespace Events;
 
 use PDO;
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\ServiceManager\AbstractFactory\ConfigAbstractFactory;
+use Laminas\Router\Http\Literal;
+use Laminas\Router\Http\Segment;
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\AbstractFactory\ConfigAbstractFactory;
 
 return [
     //*** EVENTMANAGER LISTENER AGGREGATE LAB: attach the listener

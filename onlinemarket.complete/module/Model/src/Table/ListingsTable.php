@@ -6,9 +6,9 @@ use DateInterval;
 
 use Model\Entity\Listing;
 
-use Zend\Db\Sql\Sql;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\EventManager\EventManager;
+use Laminas\Db\Sql\Sql;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\EventManager\EventManager;
 
 class ListingsTable extends TableGateway
 {

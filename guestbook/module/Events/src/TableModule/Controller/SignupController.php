@@ -1,9 +1,9 @@
 <?php
 namespace Events\TableModule\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Zend\Filter;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Laminas\Filter;
 
 class SignupController extends AbstractActionController
 {

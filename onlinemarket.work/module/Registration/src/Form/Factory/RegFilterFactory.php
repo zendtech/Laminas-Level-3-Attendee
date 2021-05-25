@@ -1,8 +1,8 @@
 <?php
 namespace Registration\Form\Factory;
 
-use Zend\Hydrator\ObjectProperty;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ObjectProperty;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
 use Registration\Form\RegForm;

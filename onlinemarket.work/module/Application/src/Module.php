@@ -9,7 +9,7 @@ namespace Application;
 
 
 use Application\Listener\Whatever;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 
 class Module
 {
@@ -20,7 +20,7 @@ class Module
         return include __DIR__ . '/../config/module.config.php';
     }
 
-	public function onBootstrap(\Zend\Mvc\MvcEvent $e) 
+	public function onBootstrap(\Laminas\Mvc\MvcEvent $e) 
 	{
 		$container = $e->getApplication()->getServiceManager();
         $shared = $e->getApplication()->getEventManager()->getSharedManager();

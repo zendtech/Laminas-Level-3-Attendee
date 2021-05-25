@@ -2,12 +2,12 @@
 namespace Events\Model;
 
 use Events\Entity\EventEntityInterface;
-use Zend\EventManager\EventManager;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\ResultSet\HydratingResultSet;
+use Laminas\EventManager\EventManager;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Db\ResultSet\HydratingResultSet;
 //*** DELEGATING HYDRATOR LAB: add the correct "use" statements
-use Zend\Hydrator\DelegatingHydrator;
+use Laminas\Hydrator\DelegatingHydrator;
 use Psr\Container\ContainerInterface;
 
 class Base implements TableGatewayInterface

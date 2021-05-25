@@ -2,7 +2,7 @@
 namespace AccessControl\Assertion;
 
 use DateTime;
-use Zend\Permissions\Acl\  {Acl, Role\RoleInterface, Resource\ResourceInterface, Assertion\AssertionInterface};
+use Laminas\Permissions\Acl\  {Acl, Role\RoleInterface, Resource\ResourceInterface, Assertion\AssertionInterface};
 
 class DateTimeAssert implements AssertionInterface
 {

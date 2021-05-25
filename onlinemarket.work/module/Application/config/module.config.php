@@ -7,13 +7,13 @@
 
 namespace Application;
 
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
-use Zend\View\Helper as ViewHelper;
-use Zend\Form\View\Helper as FormHelper;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\Router\Http\Literal;
+use Laminas\Router\Http\Segment;
+use Laminas\View\Helper as ViewHelper;
+use Laminas\Form\View\Helper as FormHelper;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 //*** NAVIGATION LAB: activate the NavigationAbstractServiceFactory
-use Zend\Navigation\Service\NavigationAbstractServiceFactory;
+use Laminas\Navigation\Service\NavigationAbstractServiceFactory;
 
 return [
     'router' => [

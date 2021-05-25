@@ -1,8 +1,8 @@
 <?php
 namespace Encryption;
 
-use Zend\Crypt\BlockCipher;
-use Zend\Crypt\Exception\ {NotFoundException, RuntimeException};
+use Laminas\Crypt\BlockCipher;
+use Laminas\Crypt\Exception\ {NotFoundException, RuntimeException};
 
 class Module
 {

@@ -2,7 +2,7 @@
 namespace Login\Form\Factory;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 use Login\Form\Question as QuestionForm;
 

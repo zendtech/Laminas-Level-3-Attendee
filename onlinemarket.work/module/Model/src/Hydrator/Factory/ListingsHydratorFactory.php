@@ -3,10 +3,10 @@
 namespace Model\Hydrator\Factory;
 
 use Model\Hydrator\ListingsHydrator;
-use Zend\Hydrator\Reflection;
-use Zend\Hydrator\Aggregate\AggregateHydrator;
+use Laminas\Hydrator\Reflection;
+use Laminas\Hydrator\Aggregate\AggregateHydrator;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ListingsHydratorFactory implements FactoryInterface
 {

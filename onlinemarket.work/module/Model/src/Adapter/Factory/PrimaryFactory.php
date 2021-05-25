@@ -1,9 +1,9 @@
 <?php
 namespace Model\Adapter\Factory;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class PrimaryFactory implements FactoryInterface
 {

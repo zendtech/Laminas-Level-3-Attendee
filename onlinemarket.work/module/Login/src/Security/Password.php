@@ -1,7 +1,7 @@
 <?php
 namespace Login\Security;
 
-use Zend\Crypt\Password\Bcrypt;
+use Laminas\Crypt\Password\Bcrypt;
 
 class Password
 {

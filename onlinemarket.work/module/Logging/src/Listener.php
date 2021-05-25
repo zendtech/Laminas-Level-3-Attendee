@@ -1,11 +1,11 @@
 <?php
 namespace Logging;
 
-use Zend\Log\Logger;
-use Zend\EventManager\ {EventManagerInterface, AbstractListenerAggregate};
+use Laminas\Log\Logger;
+use Laminas\EventManager\ {EventManagerInterface, AbstractListenerAggregate};
 
 //*** DATABASE EVENTS LAB: add appropriate "use" statements
-use Zend\Db\TableGateway\Feature\EventFeatureEventsInterface;
+use Laminas\Db\TableGateway\Feature\EventFeatureEventsInterface;
 
 class Listener extends AbstractListenerAggregate
 {

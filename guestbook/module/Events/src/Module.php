@@ -4,9 +4,9 @@ namespace Events;
 use Events\Doctrine\Repository\ {AttendeeRepo, EventRepo, RegistrationRepo};
 use Events\Doctrine\Controller\RepoAwareInterface;
 
-use Zend\Filter;
-use Zend\Db\Adapter\Adapter;
-use Zend\Navigation\Service\ConstructedNavigationFactory;
+use Laminas\Filter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Navigation\Service\ConstructedNavigationFactory;
 
 class Module
 {
@@ -30,8 +30,8 @@ class Module
                     return $filter;
                 },
                 // We add this so that the table classes can all use the ReflectionBasedAbstractFactory
-                // This factory looks for a service which matches the type hint Zend\Db\Adapter\Adapter
-                'Zend\Db\Adapter\Adapter' => function ($container) {
+                // This factory looks for a service which matches the type hint Laminas\Db\Adapter\Adapter
+                'Laminas\Db\Adapter\Adapter' => function ($container) {
                     return new Adapter($container->get('local-db-config'));
                 },
                 Doctrine\Repository\EventRepo::class => function ($sm) {

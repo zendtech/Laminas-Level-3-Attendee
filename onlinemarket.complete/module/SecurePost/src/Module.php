@@ -4,7 +4,7 @@
  */
 namespace SecurePost;
 
-use Zend\Form\Element\Csrf;
+use Laminas\Form\Element\Csrf;
 use Interop\Container\ContainerInterface;
 
 class Module
@@ -17,7 +17,7 @@ class Module
     {
 		return [
 			'factories' => [
-				//*** Create a new service which returns a "Zend\Form\Element\Csrf" element
+				//*** Create a new service which returns a "Laminas\Form\Element\Csrf" element
 				'secure-post-csrf-element' => function ($container) {
 					return new Csrf('csrf');
 				},

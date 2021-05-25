@@ -4,8 +4,8 @@
 namespace Translation\Listener;
 
 use Locale;
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
 use Interop\Container\ContainerInterface;
 use Login\Event\LoginEvent;
 

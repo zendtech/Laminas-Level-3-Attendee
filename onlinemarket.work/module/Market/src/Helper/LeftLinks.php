@@ -2,7 +2,7 @@
 <?php
 namespace Market\Helper;
 
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 class LeftLinks extends AbstractHelper
 {

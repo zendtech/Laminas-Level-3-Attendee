@@ -5,7 +5,7 @@ use RestApi\Service\ApiService;
 use Events\TableModule\Model\ {EventTable, RegistrationTable, AttendeeTable};
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ApiServiceFactory implements FactoryInterface
 {

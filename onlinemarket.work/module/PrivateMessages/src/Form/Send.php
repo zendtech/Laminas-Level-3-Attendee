@@ -3,12 +3,12 @@ namespace PrivateMessages\Form;
 
 //use WorkArounds\Form\Form;
 
-use Zend\Filter;
-use Zend\Validator;
-use Zend\Form\Element;
-use Zend\Form\Form;
-use Zend\InputFilter\ {InputFilter, Input};
-use Zend\Hydrator\ClassMethods;
+use Laminas\Filter;
+use Laminas\Validator;
+use Laminas\Form\Element;
+use Laminas\Form\Form;
+use Laminas\InputFilter\ {InputFilter, Input};
+use Laminas\Hydrator\ClassMethods;
 use PrivateMessages\Traits\BlockCipherTrait;
 
 class Send extends Form

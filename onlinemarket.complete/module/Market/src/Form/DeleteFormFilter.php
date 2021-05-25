@@ -1,10 +1,10 @@
 <?php
 namespace Market\Form;
 
-use Zend\InputFilter\Input;
-use Zend\Validator;
-use Zend\Filter;
-use Zend\InputFilter\InputFilter;
+use Laminas\InputFilter\Input;
+use Laminas\Validator;
+use Laminas\Filter;
+use Laminas\InputFilter\InputFilter;
 
 class DeleteFormFilter extends InputFilter
 {

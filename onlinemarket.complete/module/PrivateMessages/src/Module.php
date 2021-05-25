@@ -5,9 +5,9 @@ namespace PrivateMessages;
 use PrivateMessages\Hydrator\PrivateHydrator;
 use PrivateMessages\Model\Message;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Crypt\BlockCipher;
-use Zend\Crypt\Symmetric\Exception\NotFoundException;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Crypt\BlockCipher;
+use Laminas\Crypt\Symmetric\Exception\NotFoundException;
 
 class Module
 {

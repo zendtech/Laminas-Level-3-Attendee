@@ -2,8 +2,8 @@
 namespace MyDoctrine\Controller;
 
 use MyDoctrine\Model\ {EventTable, RegistrationTable, AttendeeTable};
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
 
 class AdminController extends AbstractActionController implements RepoAwareInterface
 {

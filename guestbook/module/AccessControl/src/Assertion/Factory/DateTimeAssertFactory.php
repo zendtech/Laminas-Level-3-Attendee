@@ -5,7 +5,7 @@ use DateTime;
 use InvalidArgumentException;
 use AccessControl\Assertion\DateTimeAssert;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class DateTimeAssertFactory implements FactoryInterface
 {

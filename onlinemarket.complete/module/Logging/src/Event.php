@@ -1,7 +1,7 @@
 <?php
 namespace Logging;
 
-use Zend\EventManager\Event as ZendEvent;
+use Laminas\EventManager\Event as ZendEvent;
 
 class Event extends ZendEvent
 {

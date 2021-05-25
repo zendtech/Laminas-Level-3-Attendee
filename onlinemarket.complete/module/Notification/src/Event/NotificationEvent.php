@@ -1,7 +1,7 @@
 <?php
 namespace Notification\Event;
 
-use Zend\EventManager\Event;
+use Laminas\EventManager\Event;
 
 class NotificationEvent extends Event
 {

@@ -1,8 +1,8 @@
 <?php
 namespace Login\Listener;
 
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
 
 class Aggregate extends AbstractListenerAggregate
 {

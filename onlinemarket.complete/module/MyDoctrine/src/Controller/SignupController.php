@@ -2,9 +2,9 @@
 namespace MyDoctrine\Controller;
 
 use MyDoctrine\Model\ {EventTable, RegistrationTable, AttendeeTable};
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Zend\Filter;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Laminas\Filter;
 
 //*** implement the RepoAwareInterface
 class SignupController extends AbstractActionController implements RepoAwareInterface

@@ -2,13 +2,13 @@
 namespace Guestbook\Mapper;
 
 use Guestbook\Model\Guestbook as GuestbookModel;
-use Zend\Db\Sql\ {Sql,Expression};
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\ {TableGateway, Feature\EventFeature};
-use Zend\Db\Adapter\Driver\ResultInterface;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Hydrator\ObjectProperty;
-use Zend\EventManager\EventManager;
+use Laminas\Db\Sql\ {Sql,Expression};
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\ {TableGateway, Feature\EventFeature};
+use Laminas\Db\Adapter\Driver\ResultInterface;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Hydrator\ObjectProperty;
+use Laminas\EventManager\EventManager;
 
 class Guestbook
 {
