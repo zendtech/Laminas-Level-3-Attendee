@@ -37,15 +37,15 @@ class Module
                 Listener::class => ListenerFactory::class,
             ],
             'delegators' => [
-				//*** LAZY SERVICES LAB: delegators must be assigned in the form of an array, even if only one!
-				Logging::class => [LazyServiceFactory::class],
-			],
-			'lazy_services' => [
-				'class_map' => [Logging::class => Logging::class],
-				'proxies_target_dir' => __DIR__ . '/../../../data/proxy',
-				'proxies_namespace' => 'LoggerProxy',
-				'write_proxy_files' => TRUE,
-			],
+                //*** LAZY SERVICES LAB: configure the Logging class as a lazy service
+                //***                    NOTE: delegators must be assigned in the form of an array, even if only one!
+            ],
+            'lazy_services' => [
+                'class_map' => [Logging::class => Logging::class],
+                'proxies_target_dir' => __DIR__ . '/../../../data/proxy',
+                'proxies_namespace' => 'LoggerProxy',
+                'write_proxy_files' => TRUE,
+            ],
         ];
     }
 

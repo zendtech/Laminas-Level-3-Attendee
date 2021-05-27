@@ -1,0 +1,55 @@
+version: "3"
+services:
+  laminas-3-ldap:
+    container_name: laminas_3_ldap
+    hostname: laminas_ldap
+    image: laminas_3_ldap
+    domainname: "company.com"
+    build: server
+    volumes:
+     - ".:/home"
+     - "./zf2widder.ldif:/container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif"
+    restart: always
+    command: --copy-service
+    environment:
+      LDAP_LOG_LEVEL: "256"
+      LDAP_ORGANISATION: "Company"
+      LDAP_DOMAIN: "company.com"
+      LDAP_BASE_DN: "dc=company,dc=com"
+      LDAP_ADMIN_PASSWORD: "password"
+      LDAP_CONFIG_PASSWORD: "config"
+      LDAP_READONLY_USER: "false"
+      LDAP_RFC2307BIS_SCHEMA: "false"
+      LDAP_BACKEND: "mdb"
+      KEEP_EXISTING_CONFIG: "true"
+      LDAP_REMOVE_CONFIG_AFTER_SETUP: "false"
+    tty: true
+    stdin_open: true
+    volumes:
+      - /var/lib/ldap
+      - /etc/ldap/slapd.d
+    ports:
+     - "389:389"
+    networks:
+      app_net:
+        ipv4_address: 10.30.30.33
+  laminas-3-phpldapadmin:
+    image: osixia/phpldapadmin:latest
+    container_name: laminas_3_phpldapadmin
+    build: ./phpLdapAdmin
+    environment:
+      PHPLDAPADMIN_HTTPS: "false"
+    depends_on:
+      - laminas-3-ldap
+    command: --copy-service
+    ports:
+      - "8008:80"
+    networks:
+      app_net:
+        ipv4_address: 10.30.30.88
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.30.30.0/24"

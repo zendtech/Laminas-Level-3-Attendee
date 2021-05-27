@@ -53,11 +53,13 @@ class Module
                     $em = $sm->get('doctrine.entitymanager.orm_default');
                     return new EventRepo($em, $em->getClassMetadata('MyDoctrine\Entity\Event'));
                 },
+                //*** DOCTRINE LAB: need to define factories for Doctrine repository classes
                 RegistrationRepo::class => function ($sm) {
-                    ???
+                    /* ??? */
                 },
+                //*** DOCTRINE LAB: need to define factories for Doctrine repository classes
                 AttendeeRepo::class => function ($sm) {
-                    ???
+                    /* ??? */
                 },
                 //*** DOCTRINE LAB: these model classes can be "retired"
                 Model\EventTable::class => function ($container, $requestedName) {
