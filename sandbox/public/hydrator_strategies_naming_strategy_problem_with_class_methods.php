@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
-use Zend\Hydrator\ {ClassMethods, Reflection};
+use Laminas\Hydrator\ {ClassMethodsHydrator, ReflectionHydrator};
 
 class Test
 {
@@ -12,7 +12,7 @@ class Test
 }
 
 $test = new Test();
-$hydrator = new ClassMethods();
+$hydrator = new ClassMethodsHydrator();
 var_dump($hydrator->extract($test));
 // yields
 /*
@@ -21,7 +21,7 @@ array(1) {
 }
 */
 
-$hydrator = new Reflection();
+$hydrator = new ReflectionHydrator();
 var_dump($hydrator->extract($test));
 // yields:
 /*
@@ -32,7 +32,7 @@ array(3) {
 }
 */
 
-$hydrator = new ClassMethods();
+$hydrator = new ClassMethodsHydrator();
 $hydrator->removeNamingStrategy();
 var_dump($hydrator->extract($test));
 // yields

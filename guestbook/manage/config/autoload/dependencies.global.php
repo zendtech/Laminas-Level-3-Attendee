@@ -10,7 +10,7 @@ return [
         'services' => [
             'db-config' => [
                 'driver'   => 'PDO_mysql',
-                'dsn'      => 'mysql:host=localhost;dbname=course',
+                'dsn'      => 'mysql:host=localhost;dbname=zfcourse',
                 'username' => 'test',
                 'password' => 'password',
             ],

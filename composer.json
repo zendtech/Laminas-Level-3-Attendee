@@ -1,0 +1,5 @@
+{
+    "require": {
+        "laminas/laminas-migration": "^1.3"
+    }
+}

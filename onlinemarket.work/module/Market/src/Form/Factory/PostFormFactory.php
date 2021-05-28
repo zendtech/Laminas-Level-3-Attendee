@@ -18,9 +18,8 @@ class PostFormFactory implements FactoryInterface
         $form->setCaptchaOptions($container->get('market-captcha-options'));
         $form->buildForm();
         $form->setInputFilter($container->get(\Market\Form\PostFilter::class));
-        //*** AGGREGATE HYDRATOR LAB: get aggregate hydrator from service container
-        //$form->setHydrator(new ObjectProperty());
-        $form->setHydrator($container->get('model-listings-hydrator'));
+        //*** AGGREGATE HYDRATOR LAB: change this to aggregate hydrator obtained from service container
+        $form->setHydrator(new ObjectProperty());
         $form->bind(new Listing());
         return $form;
     }

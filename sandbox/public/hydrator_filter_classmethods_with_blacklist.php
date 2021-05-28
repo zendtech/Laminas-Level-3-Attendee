@@ -1,9 +1,9 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
 
-use Zend\Hydrator\ClassMethods;
-use Zend\EventManager\EventManager;
-use Zend\Hydrator\Filter\ {MethodMatchFilter, FilterComposite};
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\EventManager\EventManager;
+use Laminas\Hydrator\Filter\ {MethodMatchFilter, FilterComposite};
 
 class Test
 {
@@ -25,7 +25,7 @@ class Test
 }
 
 $test = new Test(new EventManager());
-$hydrator = new ClassMethods();
+$hydrator = new ClassMethodsHydrator();
 var_dump($hydrator->extract($test));
 /** yields:
 array(1) {
@@ -33,7 +33,7 @@ array(1) {
   ["two"]=>int(222)
   ["three"]=>int(333)
    ["event_manager"]=>
-  object(Zend\EventManager\EventManager)#2 (4) { etc. }
+  object(Laminas\EventManager\EventManager)#2 (4) { etc. }
 }
 */
 

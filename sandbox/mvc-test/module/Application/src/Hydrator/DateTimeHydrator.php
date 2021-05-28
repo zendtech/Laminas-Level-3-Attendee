@@ -3,7 +3,7 @@ namespace Application\Hydrator;
 
 use DateTime;
 use Application\Entity\Message;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Hydrator\HydratorInterface;
 
 class DateTimeHydrator implements HydratorInterface
 {
@@ -17,7 +17,7 @@ class DateTimeHydrator implements HydratorInterface
         return $object;
     }
 
-    public function extract($object)
+    public function extract($object) : array
     {
         $data = [];
         if ($object instanceof Message) {

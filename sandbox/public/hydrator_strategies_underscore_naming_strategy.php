@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
-use Zend\Hydrator\Reflection;
-use Zend\Hydrator\NamingStrategy\UnderscoreNamingStrategy;
+use Laminas\Hydrator\ReflectionHydrator;
+use Laminas\Hydrator\NamingStrategy\UnderscoreNamingStrategy;
 
 class Test
 {
@@ -11,7 +11,7 @@ class Test
 }
 
 $data = ['id' => 1, 'first_name' => 'Homer', 'last_name' => 'Simpson'];
-$hydrator = new Reflection();
+$hydrator = new ReflectionHydrator();
 $test = $hydrator->hydrate($data, new Test());
 var_dump($test);
 // yields:

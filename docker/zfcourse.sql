@@ -145,7 +145,7 @@ LOCK TABLES `event_d` WRITE;
 INSERT INTO `event_d` VALUES (1,'Event A',100,'2017-12-01 00:00:00'),(2,'Event B',200,'2018-01-01 00:00:00');
 /*!40000 ALTER TABLE `event_d` ENABLE KEYS */;
 UNLOCK TABLES;
-
+-- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
 -- Table structure for table `guest_messages`
 --

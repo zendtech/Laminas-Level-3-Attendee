@@ -8,6 +8,7 @@ fi
 cd /tmp
 wget -O phpMyAdmin-$VER-all-languages.tar.gz https://files.phpmyadmin.net/phpMyAdmin/$VER/phpMyAdmin-$VER-all-languages.tar.gz
 tar -xvf phpMyAdmin-$VER-all-languages.tar.gz
+rm phpMyAdmin-$VER-all-languages.tar.gz
 mkdir -p /srv/phpmyadmin
 cp -rf phpMyAdmin-$VER-all-languages/* /srv/phpmyadmin
 rm -rf phpMyAdmin-$VER-all-languages

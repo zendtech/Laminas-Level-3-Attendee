@@ -32,7 +32,7 @@ class ListingsTable extends TableGateway
     public function save(Listing $listing)
     {
         //*** AGGREGATE HYDRATOR LAB: create a custom hydrator which does this work and add to the Aggregate Hydrator you create
-        //*** AGGREGATE HYDRATOR LAB: the following 8 lines can be removed: the aggregate hydrator will do all this
+        //*** AGGREGATE HYDRATOR LAB: the following 7 lines can be removed: the aggregate hydrator will do all this
         $data = $this->getResultSetPrototype()->getHydrator()->extract($listing);
         $data['date_expires'] = $this->getDateExpires($data['expires']);
         [$data['city'], $data['country']] = explode(',', $data['cityCode']);

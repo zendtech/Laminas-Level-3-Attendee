@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
-use Zend\Hydrator\ObjectProperty;
-use Zend\Hydrator\Strategy\ {ExplodeStrategy, DateTimeFormatterStrategy};
+use Laminas\Hydrator\ObjectPropertyHydrator;
+use Laminas\Hydrator\Strategy\ {ExplodeStrategy, DateTimeFormatterStrategy};
 
 class Test
 {
@@ -10,7 +10,7 @@ class Test
     public $two;
 }
 
-$hydrator = new ObjectProperty();
+$hydrator = new ObjectPropertyHydrator();
 $hydrator->addStrategy('one',new ExplodeStrategy());
 $hydrator->addStrategy('two',new DateTimeFormatterStrategy('D, j M Y'));
 

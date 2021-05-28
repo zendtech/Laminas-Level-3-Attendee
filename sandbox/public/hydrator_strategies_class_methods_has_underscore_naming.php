@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
-use Zend\Hydrator\ClassMethods;
+use Laminas\Hydrator\ClassMethodsHydrator;
 
 class Test
 {
@@ -16,7 +16,7 @@ class Test
 }
 
 $data = ['id' => 1, 'first_name' => 'Homer', 'last_name' => 'Simpson'];
-$hydrator = new ClassMethods();
+$hydrator = new ClassMethodsHydrator();
 $test = $hydrator->hydrate($data, new Test());
 
 var_dump($test);

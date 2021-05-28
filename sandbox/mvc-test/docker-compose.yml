@@ -1,4 +1,4 @@
-zf:
+laminas:
   build: .
   dockerfile: Dockerfile
   ports:

@@ -6,7 +6,7 @@ return [
         'services' => [
             'model-primary-adapter-config' => [
                 'driver' => 'PDO',
-                'dsn' => 'mysql:hostname=localhost;dbname=course',
+                'dsn' => 'mysql:hostname=localhost;dbname=zfcourse',
                 'username' => 'vagrant',
                 'password' => 'vagrant',
             ],

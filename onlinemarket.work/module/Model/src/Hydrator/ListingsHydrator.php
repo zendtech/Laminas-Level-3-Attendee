@@ -15,7 +15,7 @@ class ListingsHydrator implements HydratorInterface
             //*** AGGREGATE HYDRATOR LAB: move logic from ListingsTable::save() here
             //*** AGGREGATE HYDRATOR LAB: calculate expires date
             //*** AGGREGATE HYDRATOR LAB: break out city and country from cityCode
-            //*** AGGREGATE HYDRATOR LAB: unset unwanted fields
+            //*** AGGREGATE HYDRATOR LAB: unset unwanted fields (see Model\Table\ListingsTable::save())
         }
         return $listing;
     }
@@ -25,6 +25,7 @@ class ListingsHydrator implements HydratorInterface
         $data = [];
         if ($listing instanceof Listing) {
             //*** AGGREGATE HYDRATOR LAB: convert `date_created` and `date_expires` columns into DateTime instance
+            //***                         [OPTIONAL] consider applying a "strategy" to do this conversion
         }
         return $data;
     }

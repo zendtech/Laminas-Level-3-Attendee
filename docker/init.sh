@@ -6,30 +6,37 @@ if [[ "$ARGS" =~ "--init" ]]; then
     echo "Updating guestbook ..."
     cd /home/guestbook
     if [[ -f ./vendor ]]; then
-        php composer.phar update
+        composer update
     else
-        php composer.phar install
+        composer install
     fi
     echo "Updating onlinemarket.work ..."
     cd /home/onlinemarket.work
     if [[ -f ./vendor ]]; then
-        php composer.phar update
+        composer update
     else
-        php composer.phar install
+        composer install
     fi
     echo "Updating onlinemarket.complete ..."
     cd /home/onlinemarket.complete
     if [[ -f ./vendor ]]; then
-        php composer.phar update
+        composer update
     else
-        php composer.phar install
+        composer install
     fi
     echo "Updating laminas-master ..."
     cd /home/laminas-master
     if [[ -f ./vendor ]]; then
-        php composer.phar update
+        composer update
     else
-        php composer.phar install
+        composer install
+    fi
+    echo "Updating sandbox ..."
+    cd /home/sandbox/mvc-test
+    if [[ -f ./vendor ]]; then
+        composer update
+    else
+        composer install
     fi
 fi
 if [[ "$ARGS" =~ "--perms" ]]; then

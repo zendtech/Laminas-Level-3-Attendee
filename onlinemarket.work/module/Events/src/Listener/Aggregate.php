@@ -19,13 +19,12 @@ class Aggregate extends AbstractListenerAggregate
     public function attach(EventManagerInterface $e, $priority = 100)
     {
         $shared = $e->getSharedManager();
-        //*** LAZY LISTENER LAB: attach the "onLog()" method as a Lazy Listener
-        $lazy = new LazyListener(['listener' => Aggregate::class, 'method' => 'onLog'], $this->serviceContainer);
-        $this->listeners[] = $shared->attach('*', Event::MOD_EVENT, $lazy);
+        //*** LAZY LISTENER LAB: attach 'onLog' as a lazy listener
+        $this->listeners[] = $shared->attach('*', Event::MOD_EVENT, [$this, 'onLog']);
     }
     public function onLog($e)
     {
-		$logger = $this->serviceContainer->get(Logging::class);
+        $logger = $this->serviceContainer->get(Logging::class);
         $logger->info(get_class($e->getTarget()) . ': REGISTRATION ADDED : ' . $e->getParam('registration'));
     }
 }

@@ -5,11 +5,11 @@ use Application\Entity\Message;
 use Application\Hydrator\DateTimeHydrator;
 use Application\Hydrator\BlockCipherHydrator;
 
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Hydrator\ObjectProperty;
-use Zend\Hydrator\Aggregate\AggregateHydrator;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Hydrator\ObjectPropertyHydrator;
+use Laminas\Hydrator\Aggregate\AggregateHydrator;
 
 // init vars
 define('TABLE_NAME', 'messages');
@@ -17,7 +17,7 @@ $key  = 'AXee4aivHieQuei8Ophao8Ooda7AhbiX';
 $algo = 'aes-256-gcm';
 
 // configure hydrators
-$hydroObj    = new ObjectProperty();
+$hydroObj    = new ObjectPropertyHydrator();
 $hydroDate   = new DateTimeHydrator();
 $hydroCrypto = new BlockCipherHydrator($key, $algo);
 
@@ -36,7 +36,7 @@ $entity    = new Message();
 $prototype = new HydratingResultSet($hydroChain, $entity);
 $table     = new TableGateway(TABLE_NAME, $adapter, null, $prototype);
 $result    = $table->select();
-foreach ($result as $message) Zend\Debug\Debug::dump($message);
+foreach ($result as $message) var_dump($message);
 
 // results (with all hydrators added the the chain):
 /*

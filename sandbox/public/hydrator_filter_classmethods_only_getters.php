@@ -1,8 +1,8 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
-use Zend\Hydrator\ClassMethods;
+use Laminas\Hydrator\ClassMethodsHydrator;
 
-class GetHydrator extends ClassMethods
+class GetHydrator extends ClassMethodsHydrator
 {
     public function __construct()
     {

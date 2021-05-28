@@ -1,9 +1,15 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
 
-use Zend\Hydrator\ClassMethods;
-use Zend\EventManager\EventManager;
-use Zend\Hydrator\Filter\ {GetFilter, MethodMatchFilter, FilterComposite, FilterProviderInterface};
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\EventManager\EventManager;
+use Laminas\Hydrator\Filter\ {
+    GetFilter,
+    MethodMatchFilter,
+    FilterComposite,
+    FilterInterface,
+    FilterProviderInterface
+};
 
 class Test implements FilterProviderInterface
 {
@@ -23,7 +29,7 @@ class Test implements FilterProviderInterface
     public function getThree()        { return $this->three; }
     public function getEventManager() { return $this->em; }
 
-    public function getFilter()
+    public function getFilter() : FilterInterface
     {
         $composite = new FilterComposite();
         $composite->addFilter('get', new GetFilter());
@@ -35,7 +41,7 @@ class Test implements FilterProviderInterface
 }
 
 $test = new Test(new EventManager());
-$hydrator = new ClassMethods();
+$hydrator = new ClassMethodsHydrator();
 var_dump($hydrator->extract($test));
 /** yields:
 array(1) {

@@ -2,8 +2,8 @@
 namespace Application\Hydrator;
 
 use Application\Entity\Message;
-use Zend\Crypt\BlockCipher;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Crypt\BlockCipher;
+use Laminas\Hydrator\HydratorInterface;
 
 class BlockCipherHydrator implements HydratorInterface
 {
@@ -27,7 +27,7 @@ class BlockCipherHydrator implements HydratorInterface
         return $object;
     }
 
-    public function extract($object)
+    public function extract($object) : array
     {
         $data = [];
         if ($object instanceof Message) {

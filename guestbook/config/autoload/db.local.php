@@ -4,7 +4,7 @@ return [
         'services' => [
             'local-db-config' => [
                 'driver' => 'pdo_mysql',
-                'dsn' => 'mysql:host=localhost;dbname=course',
+                'dsn' => 'mysql:host=localhost;dbname=zfcourse',
                 'username' => 'laminas',
                 'password' => 'password',
                 'options' => [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],

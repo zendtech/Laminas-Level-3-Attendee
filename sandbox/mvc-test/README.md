@@ -1,41 +1,41 @@
-# ZendSkeletonApplication
+# laminas-mvc-skeleton
 
 ## Introduction
 
-This is a skeleton application using the Zend Framework MVC layer and module
+This is a skeleton application using the Laminas MVC layer and module
 systems. This application is meant to be used as a starting place for those
-looking to get their feet wet with Zend Framework.
+looking to get their feet wet with Laminas MVC.
 
 ## Installation using Composer
 
-The easiest way to create a new Zend Framework project is to use
-[Composer](https://getcomposer.org/).  If you don't have it already installed,
+The easiest way to create a new Laminas MVC project is to use
+[Composer](https://getcomposer.org/). If you don't have it already installed,
 then please install as per the [documentation](https://getcomposer.org/doc/00-intro.md).
 
-To create your new Zend Framework project:
+To create your new Laminas MVC project:
 
 ```bash
-$ composer create-project -sdev zendframework/skeleton-application path/to/install
+$ composer create-project -sdev laminas/laminas-mvc-skeleton path/to/install
 ```
 
 Once installed, you can test it out immediately using PHP's built-in web server:
 
 ```bash
 $ cd path/to/install
-$ php -S 0.0.0.0:8080 -t public/ public/index.php
+$ php -S 0.0.0.0:8080 -t public
 # OR use the composer alias:
 $ composer run --timeout 0 serve
 ```
 
 This will start the cli-server on port 8080, and bind it to all network
 interfaces. You can then visit the site at http://localhost:8080/
-- which will bring up Zend Framework welcome page.
+- which will bring up Laminas MVC Skeleton welcome page.
 
 **Note:** The built-in CLI server is *for development only*.
 
 ## Development mode
 
-The skeleton ships with [zf-development-mode](https://github.com/zfcampus/zf-development-mode)
+The skeleton ships with [laminas-development-mode](https://github.com/laminas/laminas-development-mode)
 by default, and provides three aliases for consuming the script it ships with:
 
 ```bash
@@ -60,10 +60,10 @@ or manually make matching updates to the `.dist`-less copies of those files.
 To run the supplied skeleton unit tests, you need to do one of the following:
 
 - During initial project creation, select to install the MVC testing support.
-- After initial project creation, install [zend-test](https://zendframework.github.io/zend-test/):
+- After initial project creation, install [laminas-test](https://docs.laminas.dev/laminas-test/):
 
   ```bash
-  $ composer require --dev zendframework/zend-test
+  $ composer require --dev laminas/laminas-test
   ```
 
 Once testing support is present, you can run the tests using:
@@ -80,8 +80,8 @@ control. (If you want to make the modifications permanent, edit the
 
 ## Using Vagrant
 
-This skeleton includes a `Vagrantfile` based on ubuntu 16.04 (bento box)
-with configured Apache2 and PHP 7.0. Start it up using:
+This skeleton includes a `Vagrantfile` based on ubuntu 18.04 (bento box)
+with configured Apache2 and PHP 7.3. Start it up using:
 
 ```bash
 $ vagrant up
@@ -105,11 +105,11 @@ machine; you can visit the site at http://localhost:8080/
 
 > ### Vagrant and VirtualBox
 >
-> The vagrant image is based on ubuntu/xenial64. If you are using VirtualBox as
+> The vagrant image is based on bento/ubuntu-18.04. If you are using VirtualBox as
 > a provider, you will need:
 >
-> - Vagrant 1.8.5 or later
-> - VirtualBox 5.0.26 or later
+> - Vagrant 2.2.6 or later
+> - VirtualBox 6.0.14 or later
 
 For vagrant documentation, please refer to [vagrantup.com](https://www.vagrantup.com/)
 
@@ -117,7 +117,10 @@ For vagrant documentation, please refer to [vagrantup.com](https://www.vagrantup
 
 This skeleton provides a `docker-compose.yml` for use with
 [docker-compose](https://docs.docker.com/compose/); it
-uses the `Dockerfile` provided as its base. Build and start the image using:
+uses the provided `Dockerfile` to build a docker image 
+for the `laminas` container created with `docker-compose`.
+
+Build and start the image and container using:
 
 ```bash
 $ docker-compose up -d --build
@@ -125,12 +128,29 @@ $ docker-compose up -d --build
 
 At this point, you can visit http://localhost:8080 to see the site running.
 
-You can also run composer from the image. The container environment is named
-"zf", so you will pass that value to `docker-compose run`:
+You can also run commands such as `composer` in the container.  The container 
+environment is named "laminas" so you will pass that value to 
+`docker-compose run`:
 
 ```bash
-$ docker-compose run zf composer install
+$ docker-compose run laminas composer install
 ```
+
+Some composer packages optionally use additional PHP extensions.  
+The Dockerfile contains several commented-out commands 
+which enable some of the more popular php extensions. 
+For example, to install `pdo-pgsql` support for `laminas/laminas-db`
+uncomment the lines:
+
+```sh
+# RUN apt-get install --yes libpq-dev \
+#     && docker-php-ext-install pdo_pgsql
+```
+
+then re-run the `docker-compose up -d --build` line as above.
+
+> You may also want to combine the various `apt-get` and `docker-php-ext-*`
+> statements later to reduce the number of layers created by your image.
 
 ## Web server setup
 
@@ -141,9 +161,9 @@ project and you should be ready to go! It should look something like below:
 
 ```apache
 <VirtualHost *:80>
-    ServerName zfapp.localhost
-    DocumentRoot /path/to/zfapp/public
-    <Directory /path/to/zfapp/public>
+    ServerName laminasapp.localhost
+    DocumentRoot /path/to/laminasapp/public
+    <Directory /path/to/laminasapp/public>
         DirectoryIndex index.php
         AllowOverride All
         Order allow,deny
@@ -169,14 +189,14 @@ http {
 ```
 
 
-Create a virtual host configuration file for your project under `/path/to/nginx/sites-enabled/zfapp.localhost.conf`
+Create a virtual host configuration file for your project under `/path/to/nginx/sites-enabled/laminasapp.localhost.conf`
 it should look something like below:
 
 ```nginx
 server {
     listen       80;
-    server_name  zfapp.localhost;
-    root         /path/to/zfapp/public;
+    server_name  laminasapp.localhost;
+    root         /path/to/laminasapp/public;
 
     location / {
         index index.php;
@@ -186,7 +206,7 @@ server {
     location @php {
         # Pass the PHP requests to FastCGI server (php-fpm) on 127.0.0.1:9000
         fastcgi_pass   127.0.0.1:9000;
-        fastcgi_param  SCRIPT_FILENAME /path/to/zfapp/public/index.php;
+        fastcgi_param  SCRIPT_FILENAME /path/to/laminasapp/public/index.php;
         include fastcgi_params;
     }
 }
@@ -208,7 +228,7 @@ Additionally, it comes with some basic tests for the shipped
 If you want to add these QA tools, execute the following:
 
 ```bash
-$ composer require --dev phpunit/phpunit squizlabs/php_codesniffer zendframework/zend-test
+$ composer require --dev phpunit/phpunit squizlabs/php_codesniffer laminas/laminas-test
 ```
 
 We provide aliases for each of these tools in the Composer configuration:

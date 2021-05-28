@@ -1,74 +1,64 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
 <div class="jumbotron">
-    <h1>Welcome to <span class="zf-green">Zend Framework</span></h1>
+    <h1 class="display-4">Welcome to<br>Laminas MVC Skeleton Application</h1>
 
     <p>
         Congratulations! You have successfully installed the
-        <a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">ZF Skeleton Application</a>.
-        You are currently running Zend Framework version <?= \Application\Module::VERSION ?>.
+        <a href="https://github.com/laminas/laminas-mvc-skeleton" target="_blank">Laminas MVC Skeleton</a>.
         This skeleton can serve as a simple starting point for you to begin
-        building your application on ZF.
+        building your application on Laminas MVC.
     </p>
 
-    <p><a class="btn btn-success btn-lg" href="https://github.com/zendframework/zendframework" target="_blank">Fork Zend Framework on GitHub &raquo;</a></p>
+    <hr class="my-4">
+
+    <a class="btn btn-primary btn-lg" href="https://github.com/laminas" target="_blank">Check Laminas on GitHub &raquo;</a>
 </div>
 
-<div class="row">
+<div class="card-deck">
+    <div class="card">
+        <h2 class="card-header">Follow Development</h2>
+        <div class="card-body">
+            <p>
+                Laminas Project is under active development. If you are
+                interested in following the development, you can check
+                <a href="https://getlaminas.org/blog/">Laminas dev blog</a>,
+                and <a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is:issue+org:laminas">Laminas issue tracker</a>
+                (link requires a GitHub account). This is a great resource
+                for staying up to date with the latest developments!
+            </p>
 
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Follow Development</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                    Zend Framework is under active development. If you are
-                    interested in following the development of ZF, you can check
-                    <a href="http://framework.zend.com/blog/">ZF dev blog</a>,
-                    and <a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is:issue+org:zendframework">ZF issue tracker</a>
-                    (link requires a GitHub account). This is a great resource
-                    for staying up to date with the latest developments!
-                </p>
-
-                <p><a class="btn btn-success pull-right" href="http://framework.zend.com/" target="_blank">ZF Development Portal &raquo;</a></p>
-            </div>
+            <a class="btn btn-primary" href="https://getlaminas.org/" target="_blank">Laminas Project Portal &raquo;</a>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Discover Modules</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                    The community is working on developing a community site to
-                    serve as a repository and gallery for ZF modules. The
-                    project is available <a href="https://github.com/zendframework/modules.zendframework.com">on GitHub</a>.
-                    The site is currently live and currently contains a list of
-                    some of the modules already available for ZF.
-                </p>
+    <div class="card">
+        <h2 class="card-header">Discover Modules</h2>
+        <div class="card-body">
+            <p>
+                Laminas MVC is a modular application.
+                You can find multiple compatible modules on packagist.
+            </p>
 
-                <p><a class="btn btn-success pull-right" href="http://modules.zendframework.com/" target="_blank">Explore ZF Modules &raquo;</a></p>
-            </div>
+            <a class="btn btn-primary" href="https://packagist.org/?tags=module~zf2~zendframework~zend%20framework~zend%20framework%202~zf3~zf~zend~laminas" target="_blank">Explore Laminas Modules &raquo;</a>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Help &amp; Support</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                    If you need any help or support while developing with ZF,
-                    you may reach us via IRC: <a href="irc://irc.freenode.net/zftalk">#zftalk on Freenode</a>.
-                    We'd love to hear any questions or feedback you may have
-                    regarding this release. Alternatively, you may subscribe
-                    and post questions to the <a href="http://framework.zend.com/archives/">mailing lists</a>.
-                </p>
+    <div class="card">
+        <h2 class="card-header">Help &amp; Support</h2>
+        <div class="card-body">
+            <p>
+                If you need any help or support while developing with Laminas,
+                you may reach us via <a href="https://laminas.dev/chat">chat</a> or
+                <a href="https://discourse.laminas.dev">forum</a>.
+                We'd love to hear any questions or feedback you may have
+                regarding any release.
+            </p>
 
-                <p><a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank">Ping us on IRC &raquo;</a></p>
-            </div>
+            <a class="btn btn-primary" href="https://laminas.dev/chat" target="_blank">Ping us on chat &raquo;</a>
         </div>
     </div>
 </div>

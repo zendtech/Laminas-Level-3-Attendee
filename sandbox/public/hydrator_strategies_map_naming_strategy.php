@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../mvc-test/vendor/autoload.php';
-use Zend\Hydrator\Reflection;
-use Zend\Hydrator\NamingStrategy\MapNamingStrategy;
+use Laminas\Hydrator\Reflection;
+use Laminas\Hydrator\NamingStrategy\MapNamingStrategy;
 
 class Test
 {
@@ -24,7 +24,7 @@ object(Test)#7 (3) {
 
 
 $mapping = ['id' => 'id', 'first_name' => 'firstName', 'last_name' => 'lastName'];
-$strategy = new MapNamingStrategy($mapping);
+$strategy = MapNamingStrategy::createFromHydrationMap($mapping);
 $hydrator->setNamingStrategy($strategy);
 $test = $hydrator->hydrate($data, new Test());
 var_dump($test);

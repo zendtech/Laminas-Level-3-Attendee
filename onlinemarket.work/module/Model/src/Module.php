@@ -4,7 +4,7 @@ namespace Model;
 use Interop\Container\ContainerInterface;
 
 //*** AGGREGATE HYDRATOR LAB: this is no longer needed
-use Laminas\Hydrator\Reflection;
+use Laminas\Hydrator\ReflectionHydrator;
 
 class Module
 {
@@ -16,10 +16,10 @@ class Module
     {
         return [
             'factories' => [
-                //*** AGGREGATE HYDRATOR LAB: change this to the aggregate hydrator you created
+                //*** AGGREGATE HYDRATOR LAB: change this to an aggregate hydrator
                 'model-listings-hydrator' => function (ContainerInterface $container, $requestedName, ?array $options = NULL)
                 {
-                    return new Reflection();
+                    return new ReflectionHydrator();
                 },
             ],
         ];

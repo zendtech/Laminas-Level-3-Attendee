@@ -52,8 +52,8 @@
             <table cellspacing="10px" cellpadding="10px" class="tableClass">
                 <!-- //*** TRANSLATION LAB: translate all headings -->
                 <tr><th><?= 'Category'; ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->category); ?></td></tr>
-                    <!-- //*** AGGREGATE HYDRATOR LAB: refactor these two lines: date_created and date_expires will now be returned by the hydrator as DateTime instances -->
                 <!-- //*** I18N LAB: use I18n formatters to show locale-aware dates -->
+                <!-- //*** AGGREGATE HYDRATOR LAB: refactor these two lines: date_created and date_expires will now be returned by the hydrator as DateTime instances -->
                 <tr><th><?= 'Posted'; ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->date_created); ?></td></tr>
                 <tr><th><?= 'Expires'; ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->date_expires); ?></td></tr>
                 <tr><th><?= 'Name'; ?></th><td class="tableSpace">&nbsp;</td><td><?php echo $this->escapeHtml($this->item->contact_name); ?></td></tr>
