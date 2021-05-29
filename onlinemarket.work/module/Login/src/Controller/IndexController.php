@@ -43,6 +43,8 @@ class IndexController extends AbstractActionController
      */
     public function loginAction()
     {
+        //*** OAUTH2 LAB: trigger Login\Event\LoginEvent::EVENT_LOGIN_VIEW
+        //*** OAUTH2 LAB: this makes sure a link to Google gets added to the login form
         $message = '';
         $request = $this->getRequest();
         if ($request->isPost()) {
@@ -97,10 +99,10 @@ class IndexController extends AbstractActionController
     }
     protected function logMessage($level, $message)
     {
-		$this->getEventManager()
-		     ->trigger( self::EVENT_SOMETHING, 
-						$this, 
-						['level' => Logger::INFO, 'message' => $message]
-		);
-	}
+        $this->getEventManager()
+             ->trigger( self::EVENT_SOMETHING,
+                        $this,
+                        ['level' => Logger::INFO, 'message' => $message]
+        );
+    }
 }

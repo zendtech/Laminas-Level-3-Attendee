@@ -1,5 +1,6 @@
 <?php
-// copy this file to /config/autoload/authoauth.local.php
+//*** OAUTH2 LAB: complete the configuration with your own private settings
+//*** OAUTH2 LAB: copy this file to /config/autoload/authoauth.local.php
 return [
     'service_manager' => [
         'invokables' => [

@@ -1,6 +1,8 @@
 <?php
 namespace AuthOauth\Adapter;
 
+//*** OAUTH2 LAB: pull in the logic as defined in the PHP League documentation for the Google client
+//*** OAUTH2 LAB: see the documentation here: https://github.com/thephpleague/oauth2-google
 use Exception;
 use AuthOauth\Generic\Constants;
 use Laminas\Authentication\Exception\InvalidArgumentException;
@@ -46,14 +48,12 @@ class GoogleAdapter extends BaseAdapter
     public function process()
     {
 
-        //*** OAUTH LAB: pull in the logic as defined in the PHP League documentation for the Google client
-        //*** OAUTH LAB: see the documentation here: https://github.com/thephpleague/oauth2-google
         $identity = array();
         if (!empty($_GET['error'])) {
             // Got an error, probably user denied access
             throw new Exception($this->formatErrorMessage(__LINE__, self::ERROR_UNKNOWN . htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8')));
         }
-        //*** OAUTH LAB: NOTE: use "$this->session" in place of "$_SESSION"
+        //*** OAUTH LAB: NOTE: using "$this->session" in place of "$_SESSION"
         if (empty($_GET['code'])) {
             // If we don't have an authorization code then get one
             $authUrl = $this->provider->getAuthorizationUrl();
@@ -99,8 +99,7 @@ class GoogleAdapter extends BaseAdapter
         // Number of seconds until the access token will expire, and need refreshing
         $identity->setExpiration($token->getExpires());
 
-        //*** OAUTH LAB: you can use "setCustomInfo()" with your entity class if desired
-        //*** OAUTH LAB: return an AuthOauth\Generic\User entity instance (or an entity class of your own creation)
+        // returns an AuthOauth\Generic\User entity instance
         return $this->setCustomInfo($identity, $response);
     }
 
