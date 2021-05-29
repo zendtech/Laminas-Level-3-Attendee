@@ -16,13 +16,13 @@ class FormHydrator implements HydratorInterface
      */
     public function hydrate(array $data, $object)
     {
-		$mapping = $object->getMapping();
-		foreach ($mapping as $formField => $colName) {
-			if (isset($data[$formField])) {
-				$method = 'set' . $formField;
-				$object->$method($data[$formField]);
-			}
-		}
+        $mapping = $object->getMapping();
+        foreach ($mapping as $formField => $colName) {
+            if (isset($data[$formField])) {
+                $method = 'set' . $formField;
+                $object->$method($data[$formField]);
+            }
+        }
         return $object;
     }
     /**
@@ -34,11 +34,11 @@ class FormHydrator implements HydratorInterface
     public function extract($object)
     {
         $data = [];
-		$mapping = $object->getMapping();
-		foreach ($mapping as $formField => $colName) {
-			$method = 'get' . $formField;
-			$data[$formField] = $object->$method();
-		}
+        $mapping = $object->getMapping();
+        foreach ($mapping as $formField => $colName) {
+            $method = 'get' . $formField;
+            $data[$formField] = $object->$method();
+        }
         return $data;
     }
 }
