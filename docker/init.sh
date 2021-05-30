@@ -38,6 +38,13 @@ if [[ "$ARGS" =~ "--init" ]]; then
     else
         composer install
     fi
+    echo "Updating stratigility ..."
+    cd /home/stratigility
+    if [[ -f ./vendor ]]; then
+        composer update
+    else
+        composer install
+    fi
 fi
 if [[ "$ARGS" =~ "--perms" ]]; then
     echo "Setting permissions ..."

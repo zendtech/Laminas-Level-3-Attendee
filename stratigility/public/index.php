@@ -1,6 +1,14 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
+/**
+ * Usage:
+ *
+ * CURL usage:
+ *     curl -X GET -H "Accept: application/json" http://10.30.30.30/stratigility/api?source=[functions|classes]
+ *     curl -X GET -H "Accept: text/html" http://10.30.30.30/stratigility/api?source=[functions|classes]
+ */
+
 // main classes and functions needed
 use Laminas\Diactoros\ResponseFactory;
 use Laminas\Diactoros\ServerRequestFactory;
@@ -14,16 +22,24 @@ use Laminas\Stratigility\MiddlewarePipe;
 //       "path()" adds routing and requires that you call "middleware()" as 2nd argument
 use function Laminas\Stratigility\middleware;
 use function Laminas\Stratigility\path;
-use Application\ {Test, Open, Main, Close};
 
-// not found response
-$notFound = function () { return new HtmlResponse('<h1>Not Found</h1>'); };
+$source = $_GET['source'] ?? 'functions';
+$source = ($source === 'functions') ? 'functions' : 'classes';
+
+// add middleware to the pipe
 $pipeline = new MiddlewarePipe();
-$pipeline->pipe(path('/main', new Open()));
-$pipeline->pipe(path('/main', new Main()));
-$pipeline->pipe(path('/main', new Close()));
-$pipeline->pipe(path('/', new Test()));
+$middleware = include __DIR__ . '/../src/' . $source . '.php';
+foreach ($middleware as $item)
+    $pipeline->pipe(path('/stratigility/api', $item));
+
+// add Not Found response
+$notFound = function () {
+    $response = (new ResponseFactory())->createResponse(404);
+    $response->getBody()->write("Not Found\n");
+    return $response;
+};
 $pipeline->pipe(new NotFoundHandler($notFound));
+
 $server = new RequestHandlerRunner(
     $pipeline,
     new SapiEmitter(),
@@ -33,7 +49,7 @@ $server = new RequestHandlerRunner(
     static function (\Throwable $e) {
         $response = (new ResponseFactory())->createResponse(500);
         $response->getBody()->write(sprintf(
-            'An error occurred: %s',
+            "An error occurred: %s\n",
             $e->getMessage
         ));
         return $response;
