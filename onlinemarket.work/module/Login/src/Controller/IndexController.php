@@ -10,6 +10,8 @@ use Model\Entity\User;
 use Model\Traits\UsersTableTrait;
 use Translation\Listener\Event;
 
+//*** LDAP LAB: use the AuthLdap\Traits\LdapTrait
+
 use Laminas\Log\Logger;
 use Laminas\View\Model\ViewModel;
 use Laminas\Mvc\Controller\AbstractActionController;
@@ -25,6 +27,7 @@ class IndexController extends AbstractActionController
 
     use UsersTableTrait;
     use AuthServiceTrait;
+    //*** LDAP LAB: use the AuthLdap\Traits\LdapTrait
 
     protected $loginForm;
 
@@ -43,10 +46,15 @@ class IndexController extends AbstractActionController
      */
     public function loginAction()
     {
-        //*** OAUTH2 LAB: trigger Login\Event\LoginEvent::EVENT_LOGIN_VIEW
-        //*** OAUTH2 LAB: this makes sure a link to Google gets added to the login form
+        // set up view model
+        $viewModel = new ViewModel(['loginForm' => $this->loginForm,
+                                    'message' => $message]);
+        $viewModel->setTemplate('login/index/index');
+        //*** OAUTH2 LAB: trigger Login\Event\LoginEvent::EVENT_LOGIN_VIEW + pass the ViewModel as an parameter
+        //*** LDAP LAB: trigger Login\Event\LoginEvent::EVENT_LOGIN_VIEW_LDAP + pass the ViewModel as an parameter
         $message = '';
         $request = $this->getRequest();
+        // process login request
         if ($request->isPost()) {
             $this->loginForm->bind(new User());
             $this->loginForm->setData($request->getPost());
@@ -55,7 +63,7 @@ class IndexController extends AbstractActionController
             } else {
                 $user = $this->loginForm->getData();
                 $adapter = $this->authService->getAdapter();
-                //*** LDAP LAB: trigger an event here and pass $adapter as a parameter
+                //*** LDAP LAB: if the "LDAP" button was pressed, assign $this->ldapAuthAdapter to $adapter
                 $adapter->setIdentity($user->getEmail());
                 $adapter->setCredential($user->getPassword());
                 $result = $adapter->authenticate();
@@ -82,10 +90,6 @@ class IndexController extends AbstractActionController
             $this->flashMessenger()->addMessage($message);
         }
         $message = $message ?: implode('<br>', $this->flashMessenger()->getMessages());
-        $viewModel = new ViewModel(['loginForm' => $this->loginForm,
-                                    'message' => $message]);
-        $viewModel->setTemplate('login/index/index');
-        $this->getEventManager()->trigger(LoginEvent::EVENT_LOGIN_VIEW, $this, ['viewModel' => $viewModel]);
         return $viewModel;
     }
     public function logoutAction()

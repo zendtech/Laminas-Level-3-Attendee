@@ -1,0 +1,12 @@
+{
+    "autoload" : {
+        "psr-4" : {
+            "Application\\" : "src/Application"
+        }
+    },
+    "require": {
+        "laminas/laminas-stratigility": "^3.3",
+        "laminas/laminas-diactoros": "^2.6",
+        "laminas/laminas-httphandlerrunner": "^1.4"
+    }
+}

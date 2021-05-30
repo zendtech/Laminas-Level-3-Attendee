@@ -17,6 +17,7 @@ class IndexControllerFactory implements FactoryInterface
         $controller->setTable($container->get(UsersTable::class));
         $controller->setLoginForm($container->get(LoginForm::class));
         $controller->setAuthService($container->get('login-auth-service'));
+        //*** LDAP LAB: inject an LDAP auth adapter into the controller (see AuthLdap\Traits\LdapTrait)
         return $controller;
     }
 }

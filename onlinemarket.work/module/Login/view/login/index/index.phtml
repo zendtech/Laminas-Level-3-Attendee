@@ -20,9 +20,13 @@
                 <?php endif; ?>
                 <p>
                 <span class="btn btn-success"><?= $this->formSubmit($this->loginForm->get('submit')); ?></span>
-                <!-- //*** OAUTH2 LAB: make sure googleLink gets set when Login\Event\LoginEvent::EVENT_LOGIN_VIEW is triggered -->
+                <!-- //*** OAUTH2 LAB: googleLink gets set when Login\Event\LoginEvent::EVENT_LOGIN_VIEW is triggered -->
                 <?php if (isset($this->googleLink)) : ?>
                     <span class="btn btn-success"><a href="<?= $this->url('auth-oauth', ['action' => 'google']); ?>">Google</a></span>
+                <?php endif; ?>
+                <!-- //*** LDAP LAB: ldapLink gets set when Login\Event\LoginEvent::EVENT_LOGIN_VIEW_LDAP is triggered -->
+                <?php if (isset($this->ldapLink)) : ?>
+                    <span class="btn btn-success"><input type="submit" value="LDAP" /></span>
                 <?php endif; ?>
                 </p>
                 <?= $this->form()->closeTag(); ?>
