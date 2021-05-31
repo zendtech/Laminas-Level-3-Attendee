@@ -45,6 +45,13 @@ if [[ "$ARGS" =~ "--init" ]]; then
     else
         composer install
     fi
+    echo "Updating mezzio ..."
+    cd /home/mezzio
+    if [[ -f ./vendor ]]; then
+        composer update
+    else
+        composer install
+    fi
 fi
 if [[ "$ARGS" =~ "--perms" ]]; then
     echo "Setting permissions ..."

@@ -5,7 +5,7 @@ namespace Admin\Middleware;
 use Login\Model\User;   // imported from Guestbook
 use Admin\Domain\SessionService;
 use Psr\Http\Message\ {ResponseInterface,ServerRequestInterface};
-use Psr\Http\Server\ {MiddlewareInterface.RequestHandlerInterface};
+use Psr\Http\Server\ {MiddlewareInterface,RequestHandlerInterface};
 use Psr\Container\ContainerInterface;
 use Laminas\Diactoros\Response\ {HtmlResponse, RedirectResponse};
 

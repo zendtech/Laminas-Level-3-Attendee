@@ -1,10 +1,16 @@
 <?php
+
 declare(strict_types=1);
-use Psr\Container\ContainerInterface;
+
 use Mezzio\Application;
 use Mezzio\MiddlewareFactory;
+use Psr\Container\ContainerInterface;
 
 /**
+ * laminas-router route configuration
+ *
+ * @see https://docs.laminas.dev/laminas-router/
+ *
  * Setup routes with a single request method:
  *
  * $app->get('/', App\Handler\HomePageHandler::class, 'home');
@@ -30,10 +36,11 @@ use Mezzio\MiddlewareFactory;
  *     'contact'
  * );
  */
-return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
+
+return static function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
     $app->get('/', App\Handler\HomePageHandler::class, 'home');
+    $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
     $app->get('/manage/list', Admin\Handler\ListHandler::class, 'manage.list');
     $app->get('/manage/confirm/:id', Admin\Handler\ConfirmHandler::class, 'manage.confirm');
     $app->get('/manage/delete/:id', Admin\Handler\DeleteHandler::class, 'manage.delete');
-    $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
 };

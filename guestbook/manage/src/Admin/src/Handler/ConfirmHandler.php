@@ -16,7 +16,9 @@ class ConfirmHandler extends BaseHandler
         $confirm = $params['confirm'] ?? 0;
         $confirm = (int) $confirm;
         if ($confirm == 1 && $id) {
-            $this->service->deleteById((int) $id);
+            if (!$this->service->deleteById((int) $id)) {
+                return new HtmlResponse($this->renderer->render('admin::problem', $params));
+            }
         }
         // Render and return a response:
         $params['list'] = $this->service->fetchAll();

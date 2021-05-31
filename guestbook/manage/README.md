@@ -1,20 +1,19 @@
-# Expressive Skeleton and Installer
+# Mezzio Skeleton and Installer
 
-[![Build Status](https://secure.travis-ci.org/mezzio/mezzio-skeleton.svg?branch=master)](https://secure.travis-ci.org/mezzio/mezzio-skeleton)
-[![Coverage Status](https://coveralls.io/repos/github/mezzio/mezzio-skeleton/badge.svg?branch=master)](https://coveralls.io/github/mezzio/mezzio-skeleton?branch=master)
+[![Build Status](https://github.com/mezzio/mezzio-skeleton/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/mezzio/mezzio-skeleton/actions/workflows/continuous-integration.yml)
 
 *Begin developing PSR-15 middleware applications in seconds!*
 
-[zend-expressive](https://github.com/mezzio/mezzio) builds on
-[zend-stratigility](https://github.com/laminas/laminas-stratigility) to
+[mezzio](https://github.com/mezzio/mezzio) builds on
+[laminas-stratigility](https://github.com/laminas/laminas-stratigility) to
 provide a minimalist PSR-15 middleware framework for PHP with routing, DI
 container, optional templating, and optional error handling capabilities.
 
-This installer will setup a skeleton application based on zend-expressive by
+This installer will setup a skeleton application based on mezzio by
 choosing optional packages based on user input as demonstrated in the following
 screenshot:
 
-![screenshot-installer](https://cloud.githubusercontent.com/assets/459648/10410494/16bdc674-6f6d-11e5-8190-3c1466e93361.png)
+![screenshot-installer](https://user-images.githubusercontent.com/1011217/90332191-55d32200-dfbb-11ea-80c0-27a07ef5691a.png)
 
 The user selected packages are saved into `composer.json` so that everyone else
 working on the project have the same packages installed. Configuration files and
@@ -24,7 +23,7 @@ removed.
 
 ## Getting Started
 
-Start your new Expressive project with composer:
+Start your new Mezzio project with composer:
 
 ```bash
 $ composer create-project mezzio/mezzio-skeleton <project-path>
@@ -68,6 +67,29 @@ You can then browse to http://localhost:8080.
 > $ composer run --timeout=86400 serve
 > ```
 
+## Installing alternative packages
+
+There is a feature to install alternative packages: Instead of entering one of
+the selection **you can actually type the package name and version**.
+
+> ```
+>   Which template engine do you want to use?
+>   [1] Plates
+>   [2] Twig
+>   [3] zend-view installs zend-servicemanager
+>   [n] None of the above
+>   Make your selection or type a composer package name and version (n): infw/pug:0.1
+>   - Searching for infw/pug:0.1
+>   - Adding package infw/pug (0.1)
+> ```
+
+That feature allows you to install any alternative package you want. It has its limitations though:
+
+* The alternative package must follow this format `namespace/package:1.0`. It needs the correct version.
+* Templates are not copied, but the ConfigProvider can be configured in such way that it uses the
+  default templates directly from the package itself.
+* This doesn't work for containers as the container.php file needs to be copied.
+
 ## Troubleshooting
 
 If the installer fails during the ``composer create-project`` phase, please go
@@ -84,7 +106,7 @@ If neither of the above help, you might face more serious issues:
 
 ## Application Development Mode Tool
 
-This skeleton comes with [laminas-development-mode](https://github.com/laminas/laminas-development-mode). 
+This skeleton comes with [laminas-development-mode](https://github.com/laminas/laminas-development-mode).
 It provides a composer script to allow you to enable and disable development mode.
 
 ### To enable development mode
@@ -95,8 +117,8 @@ It provides a composer script to allow you to enable and disable development mod
 $ composer development-enable
 ```
 
-**Note:** Enabling development mode will also clear your configuration cache, to 
-allow safely updating dependencies and ensuring any new configuration is picked 
+**Note:** Enabling development mode will also clear your configuration cache, to
+allow safely updating dependencies and ensuring any new configuration is picked
 up by your application.
 
 ### To disable development mode
@@ -132,7 +154,7 @@ local `$cacheConfig` variable.
 ## Skeleton Development
 
 This section applies only if you cloned this repo with `git clone`, not when you
-installed expressive with `composer create-project ...`.
+installed mezzio with `composer create-project ...`.
 
 If you want to run tests against the installer, you need to clone this repo and
 setup all dependencies with composer.  Make sure you **prevent composer running
@@ -147,4 +169,4 @@ $ composer test
 Please note that the installer tests remove installed config files and templates
 before and after running the tests.
 
-Before contributing read [the contributing guide](docs/CONTRIBUTING.md).
+Before contributing read [the contributing guide](https://github.com/mezzio/.github/blob/master/CONTRIBUTING.md).

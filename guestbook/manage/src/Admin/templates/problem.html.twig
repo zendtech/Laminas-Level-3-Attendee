@@ -1,0 +1,21 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}PROBLEM{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="color:red;">ERROR</h2>
+            <hr>
+            <p>Unable to Process Guestbook Listing:</p>
+            <table style="width:100%;">
+            <tr><th>ID</th><th>Name</th><th>Email</th></tr>
+            <tr>
+            <td>{{ entry.id }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.email }}</td>
+            </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

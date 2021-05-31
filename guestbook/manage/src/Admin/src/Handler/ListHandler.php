@@ -10,7 +10,7 @@ class ListHandler extends BaseHandler
 {
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
-        // Do some work...
+        // Get guestbook listings
         $params['list'] = $this->service->fetchAll();
         // Render and return a response:
         return new HtmlResponse($this->renderer->render('admin::list', $params));

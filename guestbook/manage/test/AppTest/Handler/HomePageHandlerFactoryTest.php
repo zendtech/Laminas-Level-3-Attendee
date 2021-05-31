@@ -6,21 +6,24 @@ namespace AppTest\Handler;
 
 use App\Handler\HomePageHandler;
 use App\Handler\HomePageHandlerFactory;
-use PHPUnit\Framework\TestCase;
-use Prophecy\Prophecy\ObjectProphecy;
-use Psr\Container\ContainerInterface;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
+use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
+use Psr\Container\ContainerInterface;
 
 class HomePageHandlerFactoryTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var ContainerInterface|ObjectProphecy */
     protected $container;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->container = $this->prophesize(ContainerInterface::class);
-        $router = $this->prophesize(RouterInterface::class);
+        $router          = $this->prophesize(RouterInterface::class);
 
         $this->container->get(RouterInterface::class)->willReturn($router);
     }
@@ -30,11 +33,11 @@ class HomePageHandlerFactoryTest extends TestCase
         $factory = new HomePageHandlerFactory();
         $this->container->has(TemplateRendererInterface::class)->willReturn(false);
 
-        $this->assertInstanceOf(HomePageHandlerFactory::class, $factory);
+        self::assertInstanceOf(HomePageHandlerFactory::class, $factory);
 
         $homePage = $factory($this->container->reveal());
 
-        $this->assertInstanceOf(HomePageHandler::class, $homePage);
+        self::assertInstanceOf(HomePageHandler::class, $homePage);
     }
 
     public function testFactoryWithTemplate()
@@ -48,6 +51,6 @@ class HomePageHandlerFactoryTest extends TestCase
 
         $homePage = $factory($this->container->reveal());
 
-        $this->assertInstanceOf(HomePageHandler::class, $homePage);
+        self::assertInstanceOf(HomePageHandler::class, $homePage);
     }
 }

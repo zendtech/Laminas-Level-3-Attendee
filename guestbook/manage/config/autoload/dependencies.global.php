@@ -7,14 +7,6 @@ return [
     // We recommend using fully-qualified class names whenever possible as
     // service names.
     'dependencies' => [
-        'services' => [
-            'db-config' => [
-                'driver'   => 'PDO_mysql',
-                'dsn'      => 'mysql:host=localhost;dbname=zfcourse',
-                'username' => 'test',
-                'password' => 'password',
-            ],
-        ],
         // Use 'aliases' to alias a service name to another service. The
         // key is the alias name, the value is the service to which it points.
         'aliases' => [
@@ -27,7 +19,7 @@ return [
             // Fully\Qualified\InterfaceName::class => Fully\Qualified\ClassName::class,
         ],
         // Use 'factories' for services provided by callbacks/factory classes.
-        'factories'  => [
+        'factories' => [
             // Fully\Qualified\ClassName::class => Fully\Qualified\FactoryName::class,
         ],
     ],
