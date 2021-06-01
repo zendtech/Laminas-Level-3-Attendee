@@ -18,7 +18,8 @@
         "laminas/laminas-hydrator": "^4.1",
         "laminas/laminas-db": "^2.12",
         "zendframework/zend-debug": "^2.6",
-        "laminas/laminas-crypt": "^3.4"
+        "laminas/laminas-crypt": "^3.4",
+        "laminas/laminas-cli": "^1.1"
     },
     "autoload": {
         "psr-4": {

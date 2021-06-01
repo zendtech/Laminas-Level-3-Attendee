@@ -9,6 +9,11 @@ use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
+    'laminas-cli' => [
+        'commands' => [
+            'app:list-files' => Command\ListFiles::class,
+        ],
+    ],
     'router' => [
         'routes' => [
             'home' => [
