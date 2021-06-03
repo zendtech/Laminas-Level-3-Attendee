@@ -24,6 +24,12 @@ if [[ "$ARGS" =~ "--init" ]]; then
     else
         composer install
     fi
+    cd /home/onlinemarket.complete/manage
+    if [[ -f ./vendor ]]; then
+        composer update
+    else
+        composer install
+    fi
     echo "Updating laminas-master ..."
     cd /home/laminas-master
     if [[ -f ./vendor ]]; then
